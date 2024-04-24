@@ -22,5 +22,8 @@ body {
   --color-red: #ff0000;
   --color-blue: #012243;
   --color-cream: #fff7e3;
+
+  --font-japanese2020: Japanese2020;
+  --font-fredoka: Fredoka;
 }
 </style>
