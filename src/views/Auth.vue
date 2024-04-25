@@ -13,10 +13,8 @@ const { username, password } = toRefs(loginForm);
 const loginFormRef = ref(null);
 const login = () => {
   if (loginFormRef.value.checkValidity()) {
-    // Form is valid, perform login action
     handleLogin(loginForm);
   } else {
-    // Form is invalid, display error or take appropriate action
     console.log("Form is invalid");
   }
 };
