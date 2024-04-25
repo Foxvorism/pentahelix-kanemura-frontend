@@ -19,6 +19,17 @@ body {
   font-family: var(--font-fredoka);
 }
 
+/*===== Custom Scrollbar =====*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue);
+  border-radius: 10px;
+}
+
+/*===== Root Variable =====*/
 :root {
   --color-red: #ff0000;
   --color-blue: #012243;
