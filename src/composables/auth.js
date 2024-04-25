@@ -1,7 +1,7 @@
 import { ref } from "vue";
-import dayjs from "dayjs";
 import { useCookies } from '@vueuse/integrations/useCookies'
 
+import dayjs from "dayjs";
 import useAxios from "./axios";
 
 const useAuth = () => {
