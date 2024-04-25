@@ -54,19 +54,21 @@ const login = () => {
             <div
               id="label"
               class="text-[var(--color-red)] font-semibold mb-1 tracking-wide"
-              required
             >
               Username
             </div>
             <div id="input">
-              <el-input v-model="username" placeholder="Masukan username" />
+              <el-input
+                v-model="username"
+                placeholder="Masukan username"
+                required
+              />
             </div>
           </div>
           <div id="password" class="mb-3">
             <div
               id="label"
               class="text-[var(--color-red)] font-semibold mb-1 tracking-wide"
-              required
             >
               Password
             </div>
@@ -75,6 +77,7 @@ const login = () => {
                 v-model="password"
                 placeholder="Masukan password"
                 type="password"
+                required
               />
             </div>
           </div>
