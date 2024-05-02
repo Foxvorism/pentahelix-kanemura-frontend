@@ -16,31 +16,31 @@
       <div class="flex justify-center items-center">
         <div
           id="link"
-          class="text-center px-6 text-xl text-[var(--color-red)] font-semibold tracking-wide"
+          class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wide"
         >
           <router-link :to="{ name: 'home' }">Home</router-link>
         </div>
         <div
           id="link"
-          class="text-center px-6 text-xl text-[var(--color-red)] font-semibold tracking-wide"
+          class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wide"
         >
-          <router-link :to="{ name: 'home' }">About Us</router-link>
+          <router-link :to="{ name: 'about' }">About Us</router-link>
         </div>
         <div
           id="link"
-          class="text-center px-6 text-xl text-[var(--color-red)] font-semibold tracking-wide"
+          class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wide"
         >
           <router-link :to="{ name: 'home' }">Menu</router-link>
         </div>
         <div
           id="link"
-          class="text-center px-6 text-xl text-[var(--color-red)] font-semibold tracking-wide"
+          class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wide"
         >
           <router-link :to="{ name: 'home' }">Order</router-link>
         </div>
         <div
           id="link"
-          class="text-center px-6 text-xl text-[var(--color-red)] font-semibold tracking-wide"
+          class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wide"
         >
           <router-link :to="{ name: 'home' }">Contact</router-link>
         </div>
