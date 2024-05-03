@@ -9,6 +9,15 @@ const useAuth = () => {
     const axios = useAxios();
     const cookies = useCookies();
 
+    const user_info = async () => {
+        try {
+            const res = await axios.get(`/users/current`);
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    
     const login = async (payload) => {    
         try {
             const res = await axios.post(`/auth/login`, payload);
@@ -18,7 +27,7 @@ const useAuth = () => {
             cookies.set("session-admin", token, {
                 expires: expired,
             });
-            // window.location.href = "/home";
+            window.location.href = "/admin-dashboard/user";
         } catch (error) {
             console.log(error);
         } 
@@ -26,6 +35,7 @@ const useAuth = () => {
 
     return {
         user,
+        user_info,
         login,
     };
 }
