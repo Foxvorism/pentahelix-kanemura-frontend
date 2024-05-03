@@ -3,12 +3,12 @@
 <template>
   <div class="w-full h-auto">
     <img
-      src="@/assets/img/dots1.png"
+      src="@/assets/img/dots-1.png"
       alt="dots"
-      class="absolute w-20 mt-40 left-0"
+      class="absolute w-20 mt-40 -left-8"
     />
     <img
-      src="@/assets/img/dots2.png"
+      src="@/assets/img/dots-2.png"
       alt="dots"
       class="absolute w-28 mt-[500px] right-10"
     />
