@@ -10,7 +10,7 @@
     <img
       src="@/assets/img/hero-3.png"
       alt="hero 2"
-      class="absolute w-[34vw] right-0 top-0 z-[1]"
+      class="absolute right-0 top-0 z-[1]"
     />
 
     <div id="text" class="z-[2]">
