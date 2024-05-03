@@ -8,7 +8,7 @@ import WhyKanemura from "@/components/main_view/about/WhyKanemura.vue";
 
 <template>
   <Navbar />
-  <div id="main" class="w-full min-h-screen bg-[var(--color-cream)]">
+  <div id="main" class="w-full min-h-screen bg-[var(--color-cream)] py-32">
     <div id="hero">
       <Hero />
     </div>
