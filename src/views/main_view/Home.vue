@@ -4,6 +4,7 @@ import Hero from "@/components/main_view/homepage/Hero.vue";
 import Kanemura from "@/components/main_view/homepage/Kanemura.vue";
 import Rating from "@/components/main_view/homepage/Rating.vue";
 import Signature from "@/components/main_view/homepage/Signature.vue";
+import Location from "@/components/main_view/homepage/Location.vue";
 </script>
 
 <template>
@@ -20,6 +21,9 @@ import Signature from "@/components/main_view/homepage/Signature.vue";
     </div>
     <div id="signature">
       <Signature />
+    </div>
+    <div id="location">
+      <Location />
     </div>
   </div>
 </template>
