@@ -3,6 +3,7 @@ import Navbar from "@/components/main_view/Navbar.vue";
 import Hero from "@/components/main_view/homepage/Hero.vue";
 import Kanemura from "@/components/main_view/homepage/Kanemura.vue";
 import Rating from "@/components/main_view/homepage/Rating.vue";
+import Signature from "@/components/main_view/homepage/Signature.vue";
 </script>
 
 <template>
@@ -16,6 +17,9 @@ import Rating from "@/components/main_view/homepage/Rating.vue";
     </div>
     <div id="rating">
       <Rating />
+    </div>
+    <div id="signature">
+      <Signature />
     </div>
   </div>
 </template>
