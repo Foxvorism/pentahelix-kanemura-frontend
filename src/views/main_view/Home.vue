@@ -6,6 +6,7 @@ import Rating from "@/components/main_view/homepage/Rating.vue";
 import Signature from "@/components/main_view/homepage/Signature.vue";
 import Location from "@/components/main_view/homepage/Location.vue";
 import Info from "@/components/main_view/homepage/Info.vue";
+import Footer from "@/components/main_view/Footer.vue";
 </script>
 
 <template>
@@ -30,4 +31,5 @@ import Info from "@/components/main_view/homepage/Info.vue";
       <Info />
     </div>
   </div>
+  <Footer />
 </template>
