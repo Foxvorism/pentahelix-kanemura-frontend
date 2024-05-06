@@ -105,8 +105,10 @@
               Opening Hour
             </div>
             <div id="text" class="text-md text-[var(--color-cream)]">
-              2 p.m. - 11 p.m.
+              2 PM - 10 PM (Weekday) <b class="mx-2"> | </b> 2 PM - 11 PM
+              (Weekend)
             </div>
+            <div id="text" class="text-md text-[var(--color-cream)]"></div>
           </div>
         </div>
       </div>
