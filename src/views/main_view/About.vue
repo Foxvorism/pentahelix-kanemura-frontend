@@ -4,6 +4,7 @@ import Hero from "@/components/main_view/about/Hero.vue";
 import Visi from "@/components/main_view/about/Visi.vue";
 import Misi from "@/components/main_view/about/Misi.vue";
 import WhyKanemura from "@/components/main_view/about/WhyKanemura.vue";
+import Footer from "@/components/main_view/Footer.vue";
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import WhyKanemura from "@/components/main_view/about/WhyKanemura.vue";
       <WhyKanemura />
     </div>
   </div>
+  <Footer />
 </template>
 
 <style scoped></style>
