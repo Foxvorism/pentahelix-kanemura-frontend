@@ -1,8 +1,8 @@
 <script setup></script>
 
 <template>
-  <div id="info" class="mx-20 mt-20">
-    <div class="grid grid-cols-2 gap-10 px-32">
+  <div id="info" class="mx-20 mt-10">
+    <div class="grid grid-cols-2 gap-10 px-20">
       <div
         id="card-info"
         class="w-full px-10 py-5 bg-[var(--color-red)] rounded-md"
@@ -11,7 +11,7 @@
           <div>
             <div
               id="icon"
-              class="flex justify-center items-center rounded-full bg-[var(--color-cream)] w-16 h-16 text-3xl"
+              class="flex justify-center items-center rounded-full bg-[var(--color-cream)] w-16 h-16 text-3xl text-[var(--color-blue)]"
             >
               <i class="ph-bold ph-map-pin-area"></i>
             </div>
@@ -38,7 +38,7 @@
           <div>
             <div
               id="icon"
-              class="flex justify-center items-center rounded-full bg-[var(--color-cream)] w-16 h-16 text-3xl"
+              class="flex justify-center items-center rounded-full bg-[var(--color-cream)] w-16 h-16 text-3xl text-[var(--color-blue)]"
             >
               <i class="ph-bold ph-phone"></i>
             </div>
@@ -65,7 +65,7 @@
           <div>
             <div
               id="icon"
-              class="flex justify-center items-center rounded-full bg-[var(--color-cream)] w-16 h-16 text-3xl"
+              class="flex justify-center items-center rounded-full bg-[var(--color-cream)] w-16 h-16 text-3xl text-[var(--color-blue)]"
             >
               <i class="ph-bold ph-envelope"></i>
             </div>
@@ -92,7 +92,7 @@
           <div>
             <div
               id="icon"
-              class="flex justify-center items-center rounded-full bg-[var(--color-cream)] w-16 h-16 text-3xl"
+              class="flex justify-center items-center rounded-full bg-[var(--color-cream)] w-16 h-16 text-3xl text-[var(--color-blue)]"
             >
               <i class="ph-bold ph-clock-user"></i>
             </div>
