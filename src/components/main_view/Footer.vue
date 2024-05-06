@@ -4,7 +4,7 @@
   <div class="w-screen bg-[var(--color-red)] px-36 py-10">
     <div class="flex justify-center gap-32">
       <div id="img" class="flex justify-center">
-        <div class="bg-[var(--color-cream)] w-[10vw] rounded-full">
+        <div class="bg-[var(--color-cream)] w-[200px] rounded-full">
           <img
             src="@/assets/img/logo-kanemura.png"
             alt="logo kanemura"
