@@ -5,13 +5,10 @@ import Sidebar from "@/components/admin_dashboard/Sidebar.vue";
 
 import UserData from "../../data/user.json";
 
-const list_user = UserData;
-
 const { user_info } = useAuth();
 
 onMounted(() => {
   user_info();
-  console.log(list_user);
 });
 </script>
 
