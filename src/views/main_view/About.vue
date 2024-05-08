@@ -9,7 +9,7 @@ import Footer from "@/components/main_view/Footer.vue";
 
 <template>
   <Navbar />
-  <div id="main" class="w-full min-h-screen bg-[var(--color-cream)] py-32">
+  <div id="main" class="w-full min-h-screen bg-[var(--color-cream)] py-20">
     <div id="hero">
       <Hero />
     </div>
