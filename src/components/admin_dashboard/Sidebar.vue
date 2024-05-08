@@ -1,6 +1,12 @@
 <script setup>
-import { ref } from "vue";
-const nama = ref("Irham");
+import { ref, onMounted } from "vue";
+import useAuth from "@/composables/auth.js";
+
+const { detail_user, getUserInfo } = useAuth();
+
+onMounted(() => {
+  getUserInfo();
+});
 
 const submenuToogle = () => {
   const menu = document.querySelector("#w-submenu");
@@ -32,7 +38,9 @@ const submenuToogle = () => {
           >
             Kanemura Japanese Food
           </p>
-          <p id="name" class="text-sm font-medium">Admin {{ nama }}</p>
+          <p id="name" class="text-sm font-medium">
+            Admin {{ detail_user.name }}
+          </p>
         </div>
       </div>
     </div>

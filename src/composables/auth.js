@@ -5,14 +5,15 @@ import dayjs from "dayjs";
 import useAxios from "./axios";
 
 const useAuth = () => {
-    const user = ref("");
     const axios = useAxios();
     const cookies = useCookies();
 
-    const user_info = async () => {
+    const detail_user = ref([]);
+
+    const getUserInfo = async () => {
         try {
             const res = await axios.get(`/users/current`);
-            console.log(res);
+            detail_user.value = await res.data.data;
         } catch (error) {
             console.log(error);
         }
@@ -34,8 +35,8 @@ const useAuth = () => {
     };  
 
     return {
-        user,
-        user_info,
+        detail_user,
+        getUserInfo,
         login,
     };
 }
