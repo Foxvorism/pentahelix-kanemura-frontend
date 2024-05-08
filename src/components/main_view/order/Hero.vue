@@ -15,9 +15,9 @@
 
     <div>
       <div id="text" class="z-[2]">
-        <div id="title" class="text-8xl">Contact Us</div>
+        <div id="title" class="text-8xl">Order</div>
         <div id="subtitle">
-          <div class="tracking-widest text-xl">お問い合わせ</div>
+          <div class="tracking-widest text-xl">注文</div>
         </div>
       </div>
     </div>
