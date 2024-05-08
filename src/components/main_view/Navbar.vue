@@ -30,19 +30,19 @@
           id="link"
           class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wide"
         >
-          <router-link :to="{ name: 'home' }">Menu</router-link>
+          <router-link :to="{ name: 'menu' }">Menu</router-link>
         </div>
         <div
           id="link"
           class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wide"
         >
-          <router-link :to="{ name: 'home' }">Order</router-link>
+          <router-link :to="{ name: 'order' }">Order</router-link>
         </div>
         <div
           id="link"
           class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wide"
         >
-          <router-link :to="{ name: 'home' }">Contact</router-link>
+          <router-link :to="{ name: 'contact' }">Contact Us</router-link>
         </div>
       </div>
     </div>

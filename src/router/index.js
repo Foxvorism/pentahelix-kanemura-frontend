@@ -15,6 +15,21 @@ const router = createRouter({
       name: 'about',
       component: () => import('../views/main_view/About.vue')
     },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: () => import('../views/main_view/Menu.vue')
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: () => import('../views/main_view/Order.vue')
+    },
+    {
+      path: '/contact-us',
+      name: 'contact',
+      component: () => import('../views/main_view/Contact.vue')
+    },
 
     // Authentication page
     {
