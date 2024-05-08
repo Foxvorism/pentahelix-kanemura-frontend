@@ -73,8 +73,9 @@ const login = () => {
             <div id="input">
               <el-input
                 v-model="password"
-                placeholder="Masukan password"
                 type="password"
+                placeholder="Masukan password"
+                show-password
                 required
               />
             </div>
