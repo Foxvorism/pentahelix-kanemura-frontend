@@ -1,3 +1,4 @@
+import './assets/elementplus.css'
 import './assets/tailwind.css'
 import './assets/font.css'
 
