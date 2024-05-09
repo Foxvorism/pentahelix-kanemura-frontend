@@ -1,0 +1,65 @@
+.el-breadcrumb__inner {
+    color: var(--color-blue) !important;
+}
+
+.el-breadcrumb__inner.is-link {
+    font-weight: 800 !important;
+    letter-spacing: 1.2px;
+}
+
+.el-table thead .cell {
+    color: var(--color-red) !important;
+}
+
+.el-table tbody .cell {
+    color: var(--color-blue) !important;
+}
+
+.el-table .el-input {
+    width: 60% !important;
+}
+
+.el-table .el-input__inner {
+    color: var(--color-blue);
+    font-weight: 500;
+}
+
+.el-table .ascending .sort-caret.ascending {
+    border-bottom-color: var(--color-red) !important;
+}
+
+.el-table .descending .sort-caret.descending {
+    border-top-color: var(--color-red) !important;
+}
+
+.el-table .el-input__wrapper,
+.el-table .el-input__wrapper:hover,
+.el-table .el-input__wrapper .is-focus {
+    box-shadow: 0 0 0 1px var(--color-blue,var(--color-blue)) inset;
+}
+
+.el-button#btn-add,
+.el-button#btn-delete {
+    padding: 10px;
+    color: var(--color-red);
+    border-color: var(--color-red);
+    margin-left: 12px;
+}
+
+.el-button#btn-add:hover,
+.el-button#btn-delete:hover{
+    background-color: var(--color-red);
+    color: var(--color-cream);
+}
+
+.el-button#btn-edit {
+    padding: 10px;
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+    
+} 
+
+.el-button#btn-edit:hover {
+    background-color: var(--color-blue);
+    color: var(--color-cream);
+}
