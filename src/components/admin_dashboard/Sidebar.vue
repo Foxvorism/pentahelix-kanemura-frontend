@@ -20,7 +20,7 @@ const submenuToogle = () => {
 <template>
   <div
     id="sidebar"
-    class="w-[256px] h-screen flex flex-col bg-white rounded-r-xl p-6 gap-5"
+    class="w-[256px] h-screen fixed flex flex-col bg-white rounded-r-xl p-6 gap-5 text-[var(--color-blue)]"
   >
     <div id="head" class="flex gap-5 pb-5">
       <div id="user-img" class="w-[50px] h-[50px] rounded-full overflow-hidden">
@@ -73,7 +73,7 @@ const submenuToogle = () => {
             <ul id="submenu" class="hidden ml-5 pl-5 pt-[5px]">
               <li>
                 <router-link
-                  :to="{ name: 'auth' }"
+                  :to="{ name: 'ad-donburi' }"
                   class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
                 >
                   <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>

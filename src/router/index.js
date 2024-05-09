@@ -43,6 +43,11 @@ const router = createRouter({
       path: '/admin-dashboard/user',
       name: 'ad-user',
       component: () => import('../views/admin_dashboard/D-User.vue')
+    },
+    {
+      path: '/admin-dashboard/donburi',
+      name: 'ad-donburi',
+      component: () => import('../views/admin_dashboard/D-Donburi.vue')
     }
   ]
 })
