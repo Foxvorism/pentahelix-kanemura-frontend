@@ -21,7 +21,7 @@ const useAuth = () => {
     
     const login = async (payload) => {    
         try {
-            const res = await axios.post(`/auth/login`, payload);
+            const res = await axios.post(`/login`, payload);
             console.log(await res.data.data);
             const token = await res.data.data.token;
             const expired = new Date(dayjs().add(30, "d"));
