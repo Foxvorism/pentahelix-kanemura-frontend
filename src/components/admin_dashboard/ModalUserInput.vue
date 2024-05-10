@@ -45,7 +45,12 @@ const handleStore = () => {
         </div>
         <hr class="my-5" />
         <div id="form">
-          <el-form :model="formUser" label-width="auto" label-position="top">
+          <el-form
+            :model="formUser"
+            label-width="auto"
+            label-position="top"
+            @keyup.enter="handleStore"
+          >
             <el-form-item label="Nama">
               <el-input type="text" v-model="formUser.name" />
             </el-form-item>
@@ -60,7 +65,7 @@ const handleStore = () => {
               />
             </el-form-item>
             <div class="flex justify-center">
-              <el-button id="btn-save" @click="handleStore">Add</el-button>
+              <el-button id="btn-save" @click="handleStore"> Add </el-button>
             </div>
           </el-form>
         </div>
