@@ -16,7 +16,7 @@
 }
 
 .el-table .el-input {
-    width: 60% !important;
+    width: calc(100% - 50px) !important;
 }
 
 .el-table .el-input__inner {
@@ -52,14 +52,35 @@
     color: var(--color-cream);
 }
 
-.el-button#btn-edit {
+.el-button#btn-info,
+.el-button#btn-edit,
+.el-button#btn-close {
     padding: 10px;
     color: var(--color-blue);
     border-color: var(--color-blue);
     
 } 
 
-.el-button#btn-edit:hover {
+.el-button#btn-info:hover,
+.el-button#btn-edit:hover,
+.el-button#btn-close:hover {
     background-color: var(--color-blue);
     color: var(--color-cream);
+}
+
+.el-button#btn-save {
+    padding: 10px 50px;
+    color: var(--color-red);
+    border-color: var(--color-red);
+}
+
+.el-button#btn-save:hover {
+    background-color: var(--color-red);
+    color: var(--color-cream);
+}
+
+.modal .el-input__wrapper,
+.modal .el-input__wrapper:hover,
+.model .el-input__wrapper .is-focus {
+    box-shadow: 0 0 0 1px var(--color-blue,var(--color-blue)) inset;
 }
