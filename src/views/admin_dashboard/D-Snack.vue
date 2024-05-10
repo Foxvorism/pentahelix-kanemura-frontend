@@ -10,7 +10,7 @@ import TableMenu from "@/components/admin_dashboard/TableMenu.vue";
     </div>
 
     <div id="body" class="pl-[256px]">
-      <TableMenu type="Donburi" />
+      <TableMenu type="Snack" />
     </div>
   </div>
 </template>

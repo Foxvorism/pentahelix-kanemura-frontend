@@ -1,13 +1,16 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { ArrowRight } from "@element-plus/icons-vue";
+
+import Swal from "sweetalert2";
 import useUser from "@/composables/user.js";
+import useAuth from "@/composables/auth.js";
 import Sidebar from "@/components/admin_dashboard/Sidebar.vue";
+import ModalUserInput from "@/components/admin_dashboard/ModalUserInput.vue";
 
 const search = ref("");
-const { users, getUsers } = useUser();
-
-const tableData = users.value;
+const { users, getUsers, destroyUser } = useUser();
+const { detail_user, getUserInfo } = useAuth();
 
 const filteredUsers = computed(() =>
   users.value.filter(
@@ -19,7 +22,31 @@ const filteredUsers = computed(() =>
 
 onMounted(() => {
   getUsers();
+  getUserInfo();
 });
+
+const deleteUser = (uname) => {
+  Swal.fire({
+    title: "Apakah anda yakin ingin menghapus data ini?",
+    text: "Data yang dihapus tidak dapat dikembalikan!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#012243",
+    cancelButtonColor: "#ff0000",
+    confirmButtonText: "Iya",
+    cancelButtonText: "Batal",
+    reverseButtons: true,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      destroyUser(uname);
+      Swal.fire({
+        title: "Deleted!",
+        text: "YData berhasil dihapus.",
+        icon: "success",
+      });
+    }
+  });
+};
 </script>
 
 <template>
@@ -33,9 +60,8 @@ onMounted(() => {
         <div id="breadcrumb" class="mb-10">
           <el-breadcrumb :separator-icon="ArrowRight">
             <el-breadcrumb-item>Admin Dasboard</el-breadcrumb-item>
-            <el-breadcrumb-item>Menu</el-breadcrumb-item>
-            <el-breadcrumb-item :to="{ path: '/ad-user' }">
-              User
+            <el-breadcrumb-item :to="{ name: 'ad-user' }">
+              Users
             </el-breadcrumb-item>
           </el-breadcrumb>
         </div>
@@ -43,27 +69,33 @@ onMounted(() => {
         <div id="data-table">
           <div
             id="table-card"
-            class="bg-white w-full min-h-full rounded-md p-5"
+            class="flex bg-white w-full h-[calc(100vh-134px)] rounded-md p-5"
           >
             <el-table
               :data="filteredUsers"
               :default-sort="{ prop: 'name', order: 'ascending' }"
-              height="650"
+              height="100%"
+              style="height: 100%"
             >
               <el-table-column prop="name" label="Nama" sortable />
               <el-table-column prop="username" label="Username" />
               <el-table-column align="right">
                 <template #header>
                   <el-input v-model="search" placeholder="Cari nama user" />
-                  <el-button id="btn-add">
-                    <i class="ph ph-plus"></i>
-                  </el-button>
+                  <ModalUserInput />
                 </template>
                 <template #default="scope">
-                  <el-button id="btn-edit">
+                  <el-button
+                    id="btn-edit"
+                    v-if="detail_user.name == scope.row.name"
+                  >
                     <i class="ph ph-pen"></i>
                   </el-button>
-                  <el-button id="btn-delete">
+                  <el-button
+                    id="btn-delete"
+                    v-if="detail_user.name != scope.row.name"
+                    @click="deleteUser(scope.row.username)"
+                  >
                     <i class="ph ph-trash"></i>
                   </el-button>
                 </template>
