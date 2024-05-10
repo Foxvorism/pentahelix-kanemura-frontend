@@ -61,7 +61,7 @@ onMounted(() => {
               </el-button>
             </template>
             <template #default="scope">
-              <el-button id="btn-info">
+              <el-button id="btn-info" v-if="menu.type != 'Additional'">
                 <i class="ph ph-info"></i>
               </el-button>
               <el-button id="btn-edit">
