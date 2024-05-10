@@ -8,47 +8,77 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/main_view/Home.vue')
+      component: () => import('@/views/main_view/Home.vue')
     },
     {
       path: '/about-us',
       name: 'about',
-      component: () => import('../views/main_view/About.vue')
+      component: () => import('@/views/main_view/About.vue')
     },
     {
       path: '/menu',
       name: 'menu',
-      component: () => import('../views/main_view/Menu.vue')
+      component: () => import('@/views/main_view/Menu.vue')
     },
     {
       path: '/order',
       name: 'order',
-      component: () => import('../views/main_view/Order.vue')
+      component: () => import('@/views/main_view/Order.vue')
     },
     {
       path: '/contact-us',
       name: 'contact',
-      component: () => import('../views/main_view/Contact.vue')
+      component: () => import('@/views/main_view/Contact.vue')
     },
 
     // Authentication page
     {
       path: '/auth',
       name: 'auth',
-      component: () => import('../views/Auth.vue')
+      component: () => import('@/views/Auth.vue')
     },
 
     // Admin Dashboard
     {
       path: '/admin-dashboard/user',
       name: 'ad-user',
-      component: () => import('../views/admin_dashboard/D-User.vue')
+      component: () => import('@/views/admin_dashboard/D-User.vue')
     },
     {
       path: '/admin-dashboard/donburi',
       name: 'ad-donburi',
-      component: () => import('../views/admin_dashboard/D-Donburi.vue')
-    }
+      component: () => import('@/views/admin_dashboard/D-Donburi.vue')
+    },
+    {
+      path: '/admin-dashboard/soupramen',
+      name: 'ad-soupramen',
+      component: () => import('@/views/admin_dashboard/D-SoupRamen.vue')
+    },
+    {
+      path: '/admin-dashboard/dryramen',
+      name: 'ad-dryramen',
+      component: () => import('@/views/admin_dashboard/D-DryRamen.vue')
+    },
+    {
+      path: '/admin-dashboard/alacarte',
+      name: 'ad-alacarte',
+      component: () => import('@/views/admin_dashboard/D-AlaCarte.vue')
+    },
+    {
+      path: '/admin-dashboard/snack',
+      name: 'ad-snack',
+      component: () => import('@/views/admin_dashboard/D-Snack.vue')
+    },
+    {
+      path: '/admin-dashboard/special',
+      name: 'ad-special',
+      component: () => import('@/views/admin_dashboard/D-Special.vue')
+    },
+    {
+      path: '/admin-dashboard/additional',
+      name: 'ad-additional',
+      component: () => import('@/views/admin_dashboard/D-Additional.vue')
+    },
   ]
 })
 
