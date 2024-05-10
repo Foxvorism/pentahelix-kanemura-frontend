@@ -41,7 +41,7 @@ const deleteUser = (uname) => {
       destroyUser(uname);
       Swal.fire({
         title: "Deleted!",
-        text: "YData berhasil dihapus.",
+        text: "Data berhasil dihapus.",
         icon: "success",
       });
     }
