@@ -7,14 +7,6 @@ const { detail_user, getUserInfo } = useAuth();
 onMounted(() => {
   getUserInfo();
 });
-
-const submenuToogle = () => {
-  const menu = document.querySelector("#w-submenu");
-  menu.classList.toggle("active");
-
-  const submenu = document.querySelector("#submenu");
-  submenu.classList.toggle("hidden");
-};
 </script>
 
 <template>
@@ -25,7 +17,7 @@ const submenuToogle = () => {
     <div id="head" class="flex gap-5 pb-5">
       <div id="user-img" class="w-[50px] h-[50px] rounded-full overflow-hidden">
         <img
-          src="../../assets/img/logo-kanemura.png"
+          src="@/assets/img/logo-kanemura.png"
           alt="logo kanemura"
           class="w-full object-cover"
         />
@@ -62,71 +54,80 @@ const submenuToogle = () => {
               <span id="text" class="tracking-wide">Users</span>
             </router-link>
           </li>
-          <li id="w-submenu" class="list-none mb-[5px]" @click="submenuToogle">
+          <li id="w-submenu" class="list-none mb-[5px]">
             <div
               class="flex items-center gap-[10px] text-sm font-medium color-[#757575] py-2 px-4 rounded-lg"
             >
               <i id="icon" class="ph-bold ph-article text-lg"></i>
               <span id="text" class="tracking-wide flex-1">Menu</span>
-              <i id="icon-arrow" class="ph-bold ph-caret-right text-sm"></i>
+              <i id="icon" class="ph-bold ph-list text-sm"></i>
             </div>
-            <ul id="submenu" class="hidden ml-5 pl-5 pt-[5px]">
-              <li>
-                <router-link
-                  :to="{ name: 'ad-donburi' }"
-                  class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-                >
-                  <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                  <span id="text" class="tracking-wide flex-1">Donburi</span>
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  :to="{ name: 'auth' }"
-                  class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-                >
-                  <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                  <span id="text" class="tracking-wide flex-1">Ramen</span>
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  :to="{ name: 'auth' }"
-                  class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-                >
-                  <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                  <span id="text" class="tracking-wide flex-1">A'la Carte</span>
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  :to="{ name: 'auth' }"
-                  class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-                >
-                  <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                  <span id="text" class="tracking-wide flex-1">Snack</span>
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  :to="{ name: 'auth' }"
-                  class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-                >
-                  <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                  <span id="text" class="tracking-wide flex-1">Special</span>
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  :to="{ name: 'auth' }"
-                  class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-                >
-                  <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                  <span id="text" class="tracking-wide flex-1">Additional</span>
-                </router-link>
-              </li>
-            </ul>
           </li>
+          <ul id="submenu" class="ml-3 pl-5 pt-[5px]">
+            <li class="mb-1">
+              <router-link
+                :to="{ name: 'ad-donburi' }"
+                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
+              >
+                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
+                <span id="text" class="tracking-wide flex-1">Donburi</span>
+              </router-link>
+            </li>
+            <li class="mb-1">
+              <router-link
+                :to="{ name: 'ad-soupramen' }"
+                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
+              >
+                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
+                <span id="text" class="tracking-wide flex-1">Soup Ramen</span>
+              </router-link>
+            </li>
+            <li class="mb-1">
+              <router-link
+                :to="{ name: 'ad-dryramen' }"
+                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
+              >
+                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
+                <span id="text" class="tracking-wide flex-1">Dry Ramen</span>
+              </router-link>
+            </li>
+            <li class="mb-1">
+              <router-link
+                :to="{ name: 'ad-alacarte' }"
+                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
+              >
+                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
+                <span id="text" class="tracking-wide flex-1">A la Carte</span>
+              </router-link>
+            </li>
+            <li class="mb-1">
+              <router-link
+                :to="{ name: 'ad-snack' }"
+                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
+              >
+                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
+                <span id="text" class="tracking-wide flex-1">Snack</span>
+              </router-link>
+            </li>
+            <li class="mb-1">
+              <router-link
+                :to="{ name: 'ad-special' }"
+                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
+              >
+                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
+                <span id="text" class="tracking-wide flex-1">Special</span>
+              </router-link>
+            </li>
+            <li class="mb-1">
+              <router-link
+                :to="{ name: 'ad-additional' }"
+                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
+              >
+                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
+                <span id="text" class="tracking-wide flex-1">Additional</span>
+              </router-link>
+            </li>
+          </ul>
         </ul>
       </div>
     </div>
@@ -137,7 +138,7 @@ const submenuToogle = () => {
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 #container {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif !important;
 }
 
 #head {
@@ -155,14 +156,6 @@ const submenuToogle = () => {
   cursor: pointer;
   color: var(--color-red);
   background-color: var(--color-cream);
-}
-
-#w-submenu i#icon-arrow {
-  transition: all 0.2s ease;
-}
-
-#w-submenu.active i#icon-arrow {
-  transform: rotate(90deg);
 }
 
 #submenu {
