@@ -2,7 +2,9 @@ import { ref } from "vue";
 import { useCookies } from '@vueuse/integrations/useCookies'
 
 import dayjs from "dayjs";
+import Swal from "sweetalert2";
 import useAxios from "./axios";
+import router from "@/router";
 
 const useAuth = () => {
     const axios = useAxios();
@@ -22,13 +24,24 @@ const useAuth = () => {
     const login = async (payload) => {    
         try {
             const res = await axios.post(`/login`, payload);
-            console.log(await res.data.data);
             const token = await res.data.data.token;
             const expired = new Date(dayjs().add(30, "d"));
             cookies.set("session-admin", token, {
                 expires: expired,
             });
-            window.location.href = "/admin-dashboard/user";
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+            });
+    
+            Toast.fire({
+                icon: "success",
+                title: "Login Berhasil!",
+            });
+            router.push({ name: 'ad-user'})
         } catch (error) {
             console.log(error);
         } 
