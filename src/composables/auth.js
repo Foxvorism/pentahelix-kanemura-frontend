@@ -42,6 +42,9 @@ const useAuth = () => {
                 title: "Login Berhasil!",
             });
             router.push({ name: 'ad-user'})
+            setTimeout(function(){
+                location.reload();
+            }, 3000);
         } catch (error) {
             console.log(error);
         } 
