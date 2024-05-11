@@ -20,6 +20,59 @@ const useAuth = () => {
             console.log(error);
         }
     };
+
+    const validationLogin = async () => {
+        try {
+            const token = cookies.get("session-admin")
+            const res = await axios.get(`/users/current`);
+            if (res.status == 200 || !token ) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+        
+                Toast.fire({
+                    icon: "error",
+                    title: "Anda harus logout terlebih dahulu!",
+                });
+                router.push({ name: 'ad-user'})
+                setTimeout(function(){
+                    location.reload();
+                }, 2000);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const validationDashboard = async () => {
+        try {
+            const res = await axios.get(`/users/current`);
+        } catch (error) {
+            console.log(error.response.status);
+            if (error.response.status != 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+        
+                Toast.fire({
+                    icon: "error",
+                    title: "Session anda habis!",
+                });
+                router.push({ name: 'auth'})
+                setTimeout(function(){
+                    location.reload();
+                }, 2000);
+            }
+        }
+    };
     
     const login = async (payload) => {    
         try {
@@ -44,7 +97,7 @@ const useAuth = () => {
             router.push({ name: 'ad-user'})
             setTimeout(function(){
                 location.reload();
-            }, 3000);
+            }, 2000);
         } catch (error) {
             console.log(error);
         } 
@@ -53,6 +106,8 @@ const useAuth = () => {
     return {
         detail_user,
         getUserInfo,
+        validationLogin,
+        validationDashboard,
         login,
     };
 }
