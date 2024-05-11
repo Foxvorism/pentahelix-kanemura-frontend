@@ -10,7 +10,7 @@ import ModalUserInput from "@/components/admin_dashboard/ModalUserInput.vue";
 
 const search = ref("");
 const { users, getUsers, destroyUser } = useUser();
-const { detail_user, getUserInfo } = useAuth();
+const { detail_user, getUserInfo, validationDashboard } = useAuth();
 
 const filteredUsers = computed(() =>
   users.value.filter(
@@ -23,6 +23,7 @@ const filteredUsers = computed(() =>
 onMounted(() => {
   getUsers();
   getUserInfo();
+  validationDashboard();
 });
 
 const deleteUser = (uname) => {

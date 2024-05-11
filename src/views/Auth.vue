@@ -1,6 +1,8 @@
 <script setup>
-import { ref, reactive, toRefs } from "vue";
+import { ref, reactive, toRefs, onMounted } from "vue";
 import useAuth from "../composables/auth.js";
+
+const { validationLogin } = useAuth();
 
 const { login: handleLogin } = useAuth();
 
@@ -18,6 +20,10 @@ const login = () => {
     console.log("Form is invalid");
   }
 };
+
+onMounted(() => {
+  validationLogin();
+});
 </script>
 
 <template>
