@@ -1,8 +1,9 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
+import Swal from "sweetalert2";
 import useAuth from "@/composables/auth.js";
 
-const { detail_user, getUserInfo } = useAuth();
+const { detail_user, getUserInfo, logout } = useAuth();
 
 onMounted(() => {
   getUserInfo();
@@ -15,12 +16,29 @@ const openSubmenu = () => {
   const submenu = document.getElementById("submenu");
   submenu.classList.toggle("hidden");
 };
+
+const handleLogout = () => {
+  Swal.fire({
+    title: "Apakah anda yakin ingin logout?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#012243",
+    cancelButtonColor: "#ff0000",
+    confirmButtonText: "Iya",
+    cancelButtonText: "Batal",
+    reverseButtons: true,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      logout();
+    }
+  });
+};
 </script>
 
 <template>
   <div
     id="sidebar"
-    class="w-[256px] h-screen fixed flex flex-col bg-white rounded-r-xl p-6 gap-5 text-[var(--color-blue)]"
+    class="w-[256px] h-screen fixed flex flex-col bg-white rounded-r-xl p-6 gap-5 text-[var(--color-blue)] overflow-y-auto"
   >
     <div id="head" class="flex gap-5 pb-5">
       <div id="user-img" class="w-[50px] h-[50px] rounded-full overflow-hidden">
@@ -149,6 +167,7 @@ const openSubmenu = () => {
       <ul>
         <li class="list-none">
           <button
+            @click="handleLogout()"
             class="w-full flex items-center gap-[10px] text-sm font-medium color-[#757575] py-2 px-4 rounded-lg"
           >
             <i id="icon" class="ph-bold ph-sign-out text-lg"></i>

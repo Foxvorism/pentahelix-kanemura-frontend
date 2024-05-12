@@ -114,7 +114,34 @@ const useAuth = () => {
                 });
             }
         } 
-    };  
+    }; 
+    
+    const logout = async () => {
+        try {
+            await axios.delete(`/auth/logout`);
+            cookies.remove("session-admin", { path: "/" });
+            console.log(test);
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+            });
+
+            Toast.fire({
+                icon: "success",
+                title: "Logout berhasil!",
+            });
+            router.push({ name: 'auth'})
+            // setTimeout(function(){
+            //     location.reload();
+            // }, 2000);
+        } catch (error) {
+            console.log(error);
+        }
+        
+    }
 
     return {
         detail_user,
@@ -122,6 +149,7 @@ const useAuth = () => {
         validationLogin,
         validationDashboard,
         login,
+        logout
     };
 }
 
