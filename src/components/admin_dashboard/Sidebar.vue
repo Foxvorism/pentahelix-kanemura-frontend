@@ -7,6 +7,14 @@ const { detail_user, getUserInfo } = useAuth();
 onMounted(() => {
   getUserInfo();
 });
+
+const openSubmenu = () => {
+  const w_submenu = document.getElementById("w-submenu");
+  w_submenu.classList.toggle("opened");
+
+  const submenu = document.getElementById("submenu");
+  submenu.classList.toggle("hidden");
+};
 </script>
 
 <template>
@@ -31,16 +39,16 @@ onMounted(() => {
             Kanemura Japanese Food
           </p>
           <p id="name" class="text-sm font-medium">
-            Admin {{ detail_user.name }}
+            {{ detail_user.name }}
           </p>
         </div>
       </div>
     </div>
-    <div id="nav">
+    <div id="nav" class="flex-1">
       <div id="menu">
         <p
           id="title"
-          class="text-[10px] font-medium text-[#757575] uppercase mb-1"
+          class="text-[10px] font-medium text-[#757575] uppercase mb-1 tracking-wider"
         >
           Dashboard
         </p>
@@ -54,16 +62,16 @@ onMounted(() => {
               <span id="text" class="tracking-wide">Users</span>
             </router-link>
           </li>
-          <li id="w-submenu" class="list-none mb-[5px]">
+          <li id="w-submenu" class="list-none mb-[5px]" @click="openSubmenu">
             <div
               class="flex items-center gap-[10px] text-sm font-medium color-[#757575] py-2 px-4 rounded-lg"
             >
               <i id="icon" class="ph-bold ph-article text-lg"></i>
               <span id="text" class="tracking-wide flex-1">Menu</span>
-              <i id="icon" class="ph-bold ph-list text-sm"></i>
+              <i id="icon" class="ph-bold ph-caret-right text-sm"></i>
             </div>
           </li>
-          <ul id="submenu" class="ml-3 pl-5 pt-[5px]">
+          <ul id="submenu" class="hidden ml-3 pl-5 pt-[5px]">
             <li class="mb-1">
               <router-link
                 :to="{ name: 'ad-donburi' }"
@@ -131,6 +139,24 @@ onMounted(() => {
         </ul>
       </div>
     </div>
+    <div id="system-menu" class="pt-5">
+      <p
+        id="title"
+        class="text-[10px] font-medium text-[#757575] uppercase mb-1 tracking-wider"
+      >
+        System
+      </p>
+      <ul>
+        <li class="list-none">
+          <button
+            class="w-full flex items-center gap-[10px] text-sm font-medium color-[#757575] py-2 px-4 rounded-lg"
+          >
+            <i id="icon" class="ph-bold ph-sign-out text-lg"></i>
+            <span id="text" class="tracking-wide">Logout</span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -145,21 +171,33 @@ onMounted(() => {
   border-bottom: 2px solid #f6f6f6;
 }
 
+#w-submenu.opened i.ph-caret-right {
+  transform: rotate(90deg);
+}
+
+#submenu {
+  transition: all 0.3s ease;
+  border-left: 2px solid #f6f6f6;
+}
+
+#system-menu {
+  border-top: 2px solid #f6f6f6;
+}
+
 #menu ul li a,
-#w-submenu div {
+#w-submenu div,
+#w-submenu i,
+#system-menu ul li button {
   transition: all 0.3s ease;
 }
 
 #menu ul li a.active,
 #menu ul li a:hover,
-#w-submenu div:hover {
+#w-submenu div:hover,
+#system-menu ul li button.active,
+#system-menu ul li button:hover {
   cursor: pointer;
   color: var(--color-red);
   background-color: var(--color-cream);
-}
-
-#submenu {
-  transition: all 0.3s ease;
-  border-left: 1px solid #f6f6f6;
 }
 </style>
