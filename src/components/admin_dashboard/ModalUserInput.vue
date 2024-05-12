@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import { ref, toRefs, reactive } from "vue";
 import useUser from "@/composables/user.js";
 
