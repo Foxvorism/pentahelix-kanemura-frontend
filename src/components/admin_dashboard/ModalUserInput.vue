@@ -1,5 +1,6 @@
 <script setup>
 import { ref, toRefs, reactive } from "vue";
+import Swal from "sweetalert2";
 import useUser from "@/composables/user.js";
 
 const { storeUser } = useUser();
@@ -19,6 +20,22 @@ const handleStore = () => {
   name.value = "";
   username.value = "";
   password.value = "";
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
+
+  Toast.fire({
+    icon: "success",
+    title: "User baru berhasil dibuat!",
+  });
+  setTimeout(function () {
+    location.reload();
+  }, 2000);
 };
 </script>
 
@@ -65,7 +82,9 @@ const handleStore = () => {
               />
             </el-form-item>
             <div class="flex justify-center">
-              <el-button id="btn-save" @click="handleStore"> Add </el-button>
+              <el-button id="btn-save" class="w-full" @click="handleStore">
+                Add
+              </el-button>
             </div>
           </el-form>
         </div>
