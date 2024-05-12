@@ -7,6 +7,7 @@ import useUser from "@/composables/user.js";
 import useAuth from "@/composables/auth.js";
 import Sidebar from "@/components/admin_dashboard/Sidebar.vue";
 import ModalUserInput from "@/components/admin_dashboard/ModalUserInput.vue";
+import ModalUserUpdate from "@/components/admin_dashboard/ModalUserUpdate.vue";
 
 const search = ref("");
 const { users, getUsers, destroyUser } = useUser();
@@ -87,9 +88,7 @@ const deleteUser = (uname) => {
                 </template>
                 <template #default="scope">
                   <div v-if="detail_user.name == scope.row.name">
-                    <el-button id="btn-edit">
-                      <i class="ph ph-pen"></i>
-                    </el-button>
+                    <ModalUserUpdate :name="scope.row.name" />
                     <el-button
                       id="btn-delete"
                       @click="deleteUser(scope.row.username)"
