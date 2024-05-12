@@ -11,7 +11,7 @@ import ModalUserUpdate from "@/components/admin_dashboard/ModalUserUpdate.vue";
 
 const search = ref("");
 const { users, getUsers, destroyUser } = useUser();
-const { detail_user, getUserInfo, validationDashboard } = useAuth();
+const { detail_user, getUserInfo, validationDashboard, logout } = useAuth();
 
 const filteredUsers = computed(() =>
   users.value.filter(
@@ -30,7 +30,7 @@ onMounted(() => {
 const deleteUser = (uname) => {
   Swal.fire({
     title: "Apakah anda yakin ingin menghapus data ini?",
-    text: "Data yang dihapus tidak dapat dikembalikan!",
+    text: "Data yang dihapus tidak dapat dikembalikan dan anda akan otomatis logout!",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#012243",
@@ -41,11 +41,7 @@ const deleteUser = (uname) => {
   }).then((result) => {
     if (result.isConfirmed) {
       destroyUser(uname);
-      Swal.fire({
-        title: "Deleted!",
-        text: "Data berhasil dihapus.",
-        icon: "success",
-      });
+      logout();
     }
   });
 };
