@@ -86,19 +86,17 @@ const deleteUser = (uname) => {
                   <ModalUserInput />
                 </template>
                 <template #default="scope">
-                  <el-button
-                    id="btn-edit"
-                    v-if="detail_user.name == scope.row.name"
-                  >
-                    <i class="ph ph-pen"></i>
-                  </el-button>
-                  <el-button
-                    id="btn-delete"
-                    v-if="detail_user.name != scope.row.name"
-                    @click="deleteUser(scope.row.username)"
-                  >
-                    <i class="ph ph-trash"></i>
-                  </el-button>
+                  <div v-if="detail_user.name == scope.row.name">
+                    <el-button id="btn-edit">
+                      <i class="ph ph-pen"></i>
+                    </el-button>
+                    <el-button
+                      id="btn-delete"
+                      @click="deleteUser(scope.row.username)"
+                    >
+                      <i class="ph ph-trash"></i>
+                    </el-button>
+                  </div>
                 </template>
               </el-table-column>
             </el-table>
