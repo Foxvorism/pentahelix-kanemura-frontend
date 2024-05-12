@@ -64,7 +64,7 @@ const useAuth = () => {
         
                 Toast.fire({
                     icon: "error",
-                    title: "Session anda habis!",
+                    title: "Session anda telah habis, silahkan login kembali!",
                 });
                 router.push({ name: 'auth'})
                 setTimeout(function(){
@@ -99,7 +99,20 @@ const useAuth = () => {
                 location.reload();
             }, 2000);
         } catch (error) {
-            console.log(error);
+            if (error.response.status == 400) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+        
+                Toast.fire({
+                    icon: "error",
+                    title: "Username atau Password yang dimasukan salah!",
+                });
+            }
         } 
     };  
 
