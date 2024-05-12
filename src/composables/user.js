@@ -18,7 +18,15 @@ const useUser = () => {
         try {
             await axios.post(`/auth/users`, payload);
             await getUsers();
-            location.reload();
+        } catch (error) {
+            console.log(error);
+        } 
+    }; 
+
+    const updateUser = async (payload) => {    
+        try {
+            await axios.put(`/users/current`, payload);
+            await getUsers();
         } catch (error) {
             console.log(error);
         } 
@@ -37,6 +45,7 @@ const useUser = () => {
         users,
         getUsers,
         storeUser,
+        updateUser,
         destroyUser
     };
 }
