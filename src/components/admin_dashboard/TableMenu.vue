@@ -3,6 +3,7 @@ import { ref, computed, onMounted } from "vue";
 import { ArrowRight } from "@element-plus/icons-vue";
 
 import useMenu from "@/composables/menu.js";
+import ModalMenuDetail from "@/components/admin_dashboard/ModalMenuDetail.vue";
 
 const menu = defineProps(["type"]);
 
@@ -10,18 +11,18 @@ const route = "ad-" + menu.type.toLowerCase();
 const searchPlaceholder = "Cari nama " + menu.type.toLowerCase();
 
 const search = ref("");
-const { menus, getMenus } = useMenu();
+const { menus, getMenusByCategory } = useMenu();
 
 const filteredMenus = computed(() =>
   menus.value.filter(
     (data) =>
       !search.value ||
-      data.nama_menu.toLowerCase().includes(search.value.toLowerCase())
+      data.namaMenu.toLowerCase().includes(search.value.toLowerCase())
   )
 );
 
 onMounted(() => {
-  getMenus(menu.type);
+  getMenusByCategory(menu.type);
 });
 </script>
 
@@ -48,22 +49,19 @@ onMounted(() => {
           height="100%"
           style="height: 100%"
         >
-          <el-table-column prop="nama_menu" label="Nama Menu" sortable />
+          <el-table-column prop="namaMenu" label="Nama Menu" sortable />
           <el-table-column prop="harga" label="Harga (IDR)" />
           <el-table-column prop="signature" label="Signature" />
           <el-table-column prop="description" label="Deskripsi" />
           <el-table-column align="right">
             <template #header>
               <el-input v-model="search" :placeholder="searchPlaceholder" />
-              <!-- <ModalUserInput /> -->
-              <el-button id="btn-info" class="ml-[12px]">
-                <i class="ph ph-info"></i>
+              <el-button id="btn-add" class="ml-[12px]">
+                <i class="ph ph-plus"></i>
               </el-button>
             </template>
             <template #default="scope">
-              <el-button id="btn-info" v-if="menu.type != 'Additional'">
-                <i class="ph ph-info"></i>
-              </el-button>
+              <ModalMenuDetail :id="scope.row.id" />
               <el-button id="btn-edit">
                 <i class="ph ph-pen"></i>
               </el-button>
