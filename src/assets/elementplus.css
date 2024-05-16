@@ -81,6 +81,7 @@
 
 .modal .el-input__wrapper,
 .modal .el-input__wrapper:hover,
-.model .el-input__wrapper .is-focus {
+.modal .el-input__wrapper .is-focus,
+.modal .el-textarea__inner {
     box-shadow: 0 0 0 1px var(--color-blue,var(--color-blue)) inset;
 }
