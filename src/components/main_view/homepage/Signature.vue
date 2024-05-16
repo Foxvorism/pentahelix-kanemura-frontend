@@ -1,34 +1,14 @@
 <script setup>
-const data = [
-  {
-    id: 1,
-    nama_menu: "Ramen Tofu",
-    description: "Kuah Gulai Kamping",
-    harga: 25000,
-    signature: true,
-  },
-  {
-    id: 1,
-    nama_menu: "Ramen Tofu",
-    description: "Kuah Gulai Kamping",
-    harga: 25000,
-    signature: true,
-  },
-  {
-    id: 1,
-    nama_menu: "Ramen Tofu",
-    description: "Kuah Gulai Kamping",
-    harga: 25000,
-    signature: true,
-  },
-  {
-    id: 1,
-    nama_menu: "Ramen Tofu",
-    description: "Kuah Gulai Kamping",
-    harga: 25000,
-    signature: true,
-  },
-];
+import { onMounted } from "vue";
+import useMenu from "@/composables/menu.js";
+
+const { menus, getSignatureMenus } = useMenu();
+
+const img_api = "http://localhost:8080/image/fileSystem/";
+
+onMounted(() => {
+  getSignatureMenus();
+});
 </script>
 
 <template>
@@ -36,12 +16,23 @@ const data = [
     <img
       src="@/assets/img/sushi-1.png"
       alt="sushi-1"
-      class="absolute -left-24 w-[15vw] mt-32"
+      class="absolute -left-24 w-[15vw] mt-72"
     />
     <img
       src="@/assets/img/sushi-2.png"
       alt="sushi-2"
-      class="absolute -right-10 w-[10vw]"
+      class="absolute -right-10 w-[10vw] mt-14"
+    />
+    <img
+      src="@/assets/img/sushi-1.png"
+      alt="sushi-1"
+      class="absolute -right-24 w-[15vw] mt-[30rem]"
+    />
+
+    <img
+      src="@/assets/img/sushi-2.png"
+      alt="sushi-2"
+      class="absolute -left-10 w-[10vw] mt-[47rem]"
     />
 
     <div
@@ -52,17 +43,29 @@ const data = [
     </div>
 
     <div id="card-container" class="mb-10">
-      <div class="grid grid-cols-4 gap-10 px-32">
-        <div v-for="item in data" :key="item.id">
+      <div class="grid grid-cols-5 gap-10 px-32">
+        <div v-for="item in menus" :key="item.id">
           <div
             id="menu-card"
             class="px-5 py-3 bg-[var(--color-red)] rounded-md min-h-full"
           >
+            <div id="image">
+              <div
+                id="img-container"
+                class="h-[20vh] p-3 flex justify-center items-center"
+              >
+                <img
+                  :src="img_api + item.nama_img"
+                  :alt="item.nama_img ?? 'Image not found'"
+                  class="h-full object-contain"
+                />
+              </div>
+            </div>
             <div
               id="menu-name"
-              class="bg-[var(--color-blue)] rounded-full text-center text-[var(--color-cream)] text-xl py-1 mb-2"
+              class="bg-[var(--color-blue)] rounded-full text-center text-[var(--color-cream)] text-md py-1 mb-2"
             >
-              {{ item.nama_menu }}
+              {{ item.namaMenu }}
             </div>
             <div
               id="menu-desc"
