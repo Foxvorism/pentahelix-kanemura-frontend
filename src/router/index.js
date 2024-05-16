@@ -45,23 +45,28 @@ const router = createRouter({
       component: () => import('@/views/admin_dashboard/D-User.vue')
     },
     {
+      path: '/admin-dashboard/category',
+      name: 'ad-category',
+      component: () => import('@/views/admin_dashboard/D-Category.vue')
+    },
+    {
       path: '/admin-dashboard/donburi',
       name: 'ad-donburi',
       component: () => import('@/views/admin_dashboard/D-Donburi.vue')
     },
     {
       path: '/admin-dashboard/soupramen',
-      name: 'ad-soupramen',
+      name: 'ad-soup ramen',
       component: () => import('@/views/admin_dashboard/D-SoupRamen.vue')
     },
     {
       path: '/admin-dashboard/dryramen',
-      name: 'ad-dryramen',
+      name: 'ad-dry ramen',
       component: () => import('@/views/admin_dashboard/D-DryRamen.vue')
     },
     {
       path: '/admin-dashboard/alacarte',
-      name: 'ad-alacarte',
+      name: 'ad-a la carte',
       component: () => import('@/views/admin_dashboard/D-AlaCarte.vue')
     },
     {
@@ -71,7 +76,7 @@ const router = createRouter({
     },
     {
       path: '/admin-dashboard/special',
-      name: 'ad-special',
+      name: 'ad-special menu',
       component: () => import('@/views/admin_dashboard/D-Special.vue')
     },
     {
