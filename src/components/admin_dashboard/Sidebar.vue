@@ -2,11 +2,14 @@
 import { onMounted } from "vue";
 import Swal from "sweetalert2";
 import useAuth from "@/composables/auth.js";
+import useCategory from "@/composables/category.js";
 
 const { detail_user, getUserInfo, logout } = useAuth();
+const { categories, getCategories } = useCategory();
 
 onMounted(() => {
   getUserInfo();
+  getCategories();
 });
 
 const openSubmenu = () => {
@@ -80,77 +83,34 @@ const handleLogout = () => {
               <span id="text" class="tracking-wide">Users</span>
             </router-link>
           </li>
+          <li class="list-none mb-[5px]">
+            <router-link
+              :to="{ name: 'ad-category' }"
+              class="flex items-center gap-[10px] text-sm font-medium color-[#757575] py-2 px-4 rounded-lg"
+            >
+              <i id="icon" class="ph-bold ph-article text-lg"></i>
+              <span id="text" class="tracking-wide">Categories</span>
+            </router-link>
+          </li>
           <li id="w-submenu" class="list-none mb-[5px]" @click="openSubmenu">
             <div
               class="flex items-center gap-[10px] text-sm font-medium color-[#757575] py-2 px-4 rounded-lg"
             >
-              <i id="icon" class="ph-bold ph-article text-lg"></i>
+              <i id="icon" class="ph-bold ph-book-bookmark text-lg"></i>
               <span id="text" class="tracking-wide flex-1">Menu</span>
               <i id="icon" class="ph-bold ph-caret-right text-sm"></i>
             </div>
           </li>
           <ul id="submenu" class="hidden ml-3 pl-5 pt-[5px]">
-            <li class="mb-1">
+            <li class="mb-1" v-for="item in categories" :key="item.id">
               <router-link
-                :to="{ name: 'ad-donburi' }"
+                :to="{ name: 'ad-' + item.nama_kategori.toLowerCase() }"
                 class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
               >
                 <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                <span id="text" class="tracking-wide flex-1">Donburi</span>
-              </router-link>
-            </li>
-            <li class="mb-1">
-              <router-link
-                :to="{ name: 'ad-soupramen' }"
-                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-              >
-                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                <span id="text" class="tracking-wide flex-1">Soup Ramen</span>
-              </router-link>
-            </li>
-            <li class="mb-1">
-              <router-link
-                :to="{ name: 'ad-dryramen' }"
-                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-              >
-                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                <span id="text" class="tracking-wide flex-1">Dry Ramen</span>
-              </router-link>
-            </li>
-            <li class="mb-1">
-              <router-link
-                :to="{ name: 'ad-alacarte' }"
-                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-              >
-                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                <span id="text" class="tracking-wide flex-1">A la Carte</span>
-              </router-link>
-            </li>
-            <li class="mb-1">
-              <router-link
-                :to="{ name: 'ad-snack' }"
-                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-              >
-                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                <span id="text" class="tracking-wide flex-1">Snack</span>
-              </router-link>
-            </li>
-            <li class="mb-1">
-              <router-link
-                :to="{ name: 'ad-special' }"
-                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-              >
-                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                <span id="text" class="tracking-wide flex-1">Special</span>
-              </router-link>
-            </li>
-            <li class="mb-1">
-              <router-link
-                :to="{ name: 'ad-additional' }"
-                class="flex items-center text-sm font-medium color-[#757575] py-2 px-3 rounded-lg"
-              >
-                <i id="icon" class="ph-bold ph-bowl-food text-lg mr-2"></i>
-                <span id="text" class="tracking-wide flex-1">Additional</span>
+                <span id="text" class="tracking-wide flex-1">{{
+                  item.nama_kategori
+                }}</span>
               </router-link>
             </li>
           </ul>
