@@ -5,7 +5,16 @@ const useMenu = () => {
     const axios = useAxios();
     const menus = ref([]);
 
-    const getMenus = async (category) => {
+    const getMenuById = async (id) => {
+        try {
+            const res = await axios.get(`/menus/${id}`);
+            menus.value = await res.data.data;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const getMenusByCategory = async (category) => {
         try {
             const res = await axios.get(`/menus?kategori=${category}`);
             menus.value = await res.data.data;
@@ -14,9 +23,22 @@ const useMenu = () => {
         }
     };
 
+    const getSignatureMenus = async () => {
+        try {
+            const res = await axios.get(`/menus?siganture=true`);
+            menus.value = await res.data.data;
+            console.log(res.data.data);
+            console.log(menus.value);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return {
         menus,
-        getMenus
+        getMenuById,
+        getMenusByCategory,
+        getSignatureMenus
     };
 }
 
