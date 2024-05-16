@@ -120,7 +120,6 @@ const useAuth = () => {
         try {
             await axios.delete(`/auth/logout`);
             cookies.remove("session-admin", { path: "/" });
-            console.log(test);
             const Toast = Swal.mixin({
                 toast: true,
                 position: "top-end",
@@ -134,9 +133,9 @@ const useAuth = () => {
                 title: "Logout berhasil!",
             });
             router.push({ name: 'auth'})
-            // setTimeout(function(){
-            //     location.reload();
-            // }, 2000);
+            setTimeout(function(){
+                location.reload();
+            }, 2000);
         } catch (error) {
             console.log(error);
         }
