@@ -5,13 +5,11 @@ import { ArrowRight } from "@element-plus/icons-vue";
 import Swal from "sweetalert2";
 import useCategory from "@/composables/category.js";
 import Sidebar from "@/components/admin_dashboard/Sidebar.vue";
-import ModalUserInput from "@/components/admin_dashboard/ModalUserInput.vue";
-import ModalUserUpdate from "@/components/admin_dashboard/ModalUserUpdate.vue";
 
 const search = ref("");
 const { categories, getCategories } = useCategory();
 
-const filteredUsers = computed(() =>
+const filteredCategories = computed(() =>
   categories.value.filter(
     (data) =>
       !search.value ||
@@ -22,25 +20,6 @@ const filteredUsers = computed(() =>
 onMounted(() => {
   getCategories();
 });
-
-const deleteUser = (uname) => {
-  Swal.fire({
-    title: "Apakah anda yakin ingin menghapus data ini?",
-    text: "Data yang dihapus tidak dapat dikembalikan dan anda akan otomatis logout!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#012243",
-    cancelButtonColor: "#ff0000",
-    confirmButtonText: "Iya",
-    cancelButtonText: "Batal",
-    reverseButtons: true,
-  }).then((result) => {
-    if (result.isConfirmed) {
-      destroyUser(uname);
-      logout();
-    }
-  });
-};
 </script>
 
 <template>
@@ -66,7 +45,7 @@ const deleteUser = (uname) => {
             class="flex bg-white w-full h-[calc(100vh-134px)] rounded-md p-5"
           >
             <el-table
-              :data="filteredUsers"
+              :data="filteredCategories"
               :default-sort="{ prop: 'idKategori', order: 'ascending' }"
               height="100%"
               style="height: 100%"
@@ -76,17 +55,7 @@ const deleteUser = (uname) => {
               <el-table-column align="right">
                 <template #header>
                   <el-input v-model="search" placeholder="Cari nama kategori" />
-                  <!-- <ModalUserInput /> -->
                 </template>
-                <!-- <template #default="scope">
-                  <ModalUserUpdate :name="scope.row.name" />
-                  <el-button
-                    id="btn-delete"
-                    @click="deleteUser(scope.row.username)"
-                  >
-                    <i class="ph ph-trash"></i>
-                  </el-button>
-                </template> -->
               </el-table-column>
             </el-table>
           </div>
