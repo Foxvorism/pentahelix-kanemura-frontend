@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import Swal from "sweetalert2";
 import useMenu from "@/composables/menu.js";
 
 const { menus, getMenuById } = useMenu();
@@ -61,7 +60,7 @@ const img_api = "http://localhost:8080/image/fileSystem/";
                   <el-input type="text" :value="menus.signature" readonly />
                 </el-form-item>
               </div>
-              <el-form-item label="New Password">
+              <el-form-item label="Description">
                 <el-input
                   type="textarea"
                   :rows="4"
