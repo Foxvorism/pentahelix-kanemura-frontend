@@ -74,14 +74,27 @@
     border-color: var(--color-red);
 }
 
-.el-button#btn-save:hover {
+.el-button#btn-save:hover,
+.el-button#btn-upimg:hover {
     background-color: var(--color-red);
     color: var(--color-cream);
+}
+
+.el-button#btn-upimg {
+    padding: 10px;
+    color: var(--color-red);
+    border-color: var(--color-red);
+    background-color: var(--color-cream);
 }
 
 .modal .el-input__wrapper,
 .modal .el-input__wrapper:hover,
 .modal .el-input__wrapper .is-focus,
-.modal .el-textarea__inner {
+.modal .el-textarea__inner,
+.modal .el-select__wrapper {
     box-shadow: 0 0 0 1px var(--color-blue,var(--color-blue)) inset;
+}
+
+.modal .el-select__wrapper .el-select__caret {
+    color: var(--color-blue);
 }
