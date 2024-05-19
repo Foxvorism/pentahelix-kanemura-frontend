@@ -13,12 +13,10 @@
       class="absolute w-[34vw] right-0 top-0 z-[1]"
     />
 
-    <div>
-      <div id="text" class="z-[2]">
-        <div id="title" class="text-8xl">Contact Us</div>
-        <div id="subtitle">
-          <div class="tracking-widest text-xl">お問い合わせ</div>
-        </div>
+    <div class="z-[5] text-[var(--color-blue)]">
+      <div id="title" class="text-8xl mb-5">Contact Us</div>
+      <div id="japanese" class="text-4xl tracking-widest font-semibold">
+        お問い合わせ
       </div>
     </div>
   </div>

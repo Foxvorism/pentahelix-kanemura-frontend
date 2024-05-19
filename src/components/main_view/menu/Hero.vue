@@ -13,12 +13,10 @@
       class="absolute w-[34vw] right-0 top-0 z-[1]"
     />
 
-    <div>
-      <div id="text" class="z-[2]">
-        <div id="title" class="text-8xl">Menu</div>
-        <div id="subtitle">
-          <div class="tracking-widest text-xl">メニュー</div>
-        </div>
+    <div class="z-[5] text-[var(--color-blue)]">
+      <div id="title" class="text-8xl mb-5">Menu</div>
+      <div id="japanese" class="text-4xl tracking-widest font-semibold">
+        メニュー
       </div>
     </div>
   </div>
@@ -27,11 +25,5 @@
 <style scoped>
 #title {
   font-family: var(--font-japanese2020);
-}
-
-#img {
-  background-image: url(@/assets/img/bg-auth.png);
-  background-size: cover;
-  background-position: center;
 }
 </style>

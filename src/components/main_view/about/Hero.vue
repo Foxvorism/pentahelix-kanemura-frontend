@@ -13,8 +13,8 @@
       class="absolute w-[34vw] right-0 top-0 z-[1]"
     />
 
-    <div id="text" class="z-[2]">
-      <div id="title" class="text-8xl">Kanemura</div>
+    <div class="z-[5] text-[var(--color-blue)]">
+      <div id="title" class="text-8xl mb-5">Kanemura</div>
       <div id="subtitle" class="grid grid-cols-2">
         <div id="sub1" class="text-left tracking-widest text-xl">
           Japanese food
