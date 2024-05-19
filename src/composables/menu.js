@@ -28,7 +28,6 @@ const useMenu = () => {
         try {
             const res = await axios.get(`/menus?signature=true`);
             menus.value = await res.data.data;
-            console.log(menus.value);
         } catch (error) {
             console.log(error);
         }
@@ -59,25 +58,52 @@ const useMenu = () => {
         } 
     }
 
+    const updateMenu = async (id, menu_name, payload) => {
+        try {
+            const res1 = await axios.put(`/auth/menus/${id}`, payload);
+            console.log(payload);
+            if (res1.status == 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+                
+                Toast.fire({
+                    icon: "success",
+                    title: menu_name + " berhasil diubah!",
+                });
+                setTimeout(function () {
+                    location.reload();
+                }, 2000);
+            }
+        } catch (error) {
+            console.log(error);
+        } 
+    }
+
     const destroyMenu = async (id, nama_menu) => {
         try {
-            await axios.delete(`/auth/menus/${id}`);
-
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 2000,
-                timerProgressBar: true,
-            });
-            
-            Toast.fire({
-                icon: "success",
-                title: nama_menu + " berhasil dihapus!",
-            });
-            setTimeout(function () {
-                location.reload();
-            }, 2000);
+            const res = await axios.delete(`/auth/menus/${id}`);
+            if (res.status == 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+                
+                Toast.fire({
+                    icon: "success",
+                    title: nama_menu + " berhasil dihapus!",
+                });
+                setTimeout(function () {
+                    location.reload();
+                }, 2000);
+            }
         } catch (error) {
             console.log(error);
         } 
@@ -89,6 +115,7 @@ const useMenu = () => {
         getMenusByCategory,
         getSignatureMenus,
         storeMenu,
+        updateMenu,
         destroyMenu
     };
 }
