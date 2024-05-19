@@ -3,16 +3,17 @@ import { ref, toRefs, reactive, onMounted } from "vue";
 import useMenu from "@/composables/menu.js";
 import useCategory from "@/composables/category.js";
 
-const { updateMenu } = useMenu();
+const { updateMenuData, updateMenuImg } = useMenu();
 const { categories, getCategories } = useCategory();
 
 const menu = defineProps(["data"]);
-const img_api = "http://localhost:8080/image/fileSystem/";
+const img_api = import.meta.env.VITE_BASE_URL + "/image/fileSystem/";
 
 const open = ref(false);
 const preview_img = ref(img_api + menu.data.nama_img);
 
 const formMenu = reactive({
+  id: menu.data.id,
   namaMenu: menu.data.namaMenu,
   description: menu.data.description,
   harga: menu.data.harga,
@@ -21,7 +22,7 @@ const formMenu = reactive({
   image: null,
 });
 
-const { namaMenu, description, harga, kategori, signature, image } =
+const { id, namaMenu, description, harga, kategori, signature, image } =
   toRefs(formMenu);
 
 const onUploadFile = (event) => {
@@ -30,15 +31,23 @@ const onUploadFile = (event) => {
 };
 
 const handleUpdate = () => {
-  const fd = new FormData();
-  fd.append("namaMenu", namaMenu.value);
-  fd.append("description", description.value);
-  fd.append("harga", harga.value);
-  fd.append("idkategori", kategori.value);
-  fd.append("signature", signature.value);
-  fd.append("image", image.value);
+  const fd1 = new FormData();
+  fd1.append("namaMenu", namaMenu.value);
+  fd1.append("description", description.value);
+  fd1.append("harga", harga.value);
+  fd1.append("idkategori", kategori.value);
+  fd1.append("signature", signature.value);
 
-  updateMenu(menu.data.id, menu.data.namaMenu, fd);
+  const fd2 = new FormData();
+  fd2.append("id", id.value);
+  fd2.append("image", image.value);
+
+  updateMenuData(id.value, namaMenu.value, fd1);
+  if (image.value != null) {
+    updateMenuImg(namaMenu.value, fd2);
+  }
+
+  id.value = null;
   namaMenu.value = "";
   description.value = "";
   harga.value = null;
