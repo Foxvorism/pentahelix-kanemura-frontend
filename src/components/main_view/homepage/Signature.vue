@@ -4,7 +4,7 @@ import useMenu from "@/composables/menu.js";
 
 const { menus, getSignatureMenus } = useMenu();
 
-const img_api = "http://localhost:8080/image/fileSystem/";
+const img_api = import.meta.env.VITE_BASE_URL + "/image/fileSystem/";
 
 onMounted(() => {
   getSignatureMenus();
