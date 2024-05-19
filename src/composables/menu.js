@@ -58,10 +58,34 @@ const useMenu = () => {
         } 
     }
 
-    const updateMenu = async (id, menu_name, payload) => {
+    const updateMenuData = async (id, menu_name, payload) => {
         try {
             const res1 = await axios.put(`/auth/menus/${id}`, payload);
-            console.log(payload);
+            if (res1.status == 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+                
+                Toast.fire({
+                    icon: "success",
+                    title: menu_name + " berhasil diubah!",
+                });
+                setTimeout(function () {
+                    location.reload();
+                }, 2000);
+            }
+        } catch (error) {
+            console.log(error);
+        } 
+    }
+
+    const updateMenuImg = async (menu_name, payload) => {
+        try {
+            const res1 = await axios.post(`/auth/image/fileSystem`, payload);
             if (res1.status == 200) {
                 const Toast = Swal.mixin({
                     toast: true,
@@ -115,7 +139,8 @@ const useMenu = () => {
         getMenusByCategory,
         getSignatureMenus,
         storeMenu,
-        updateMenu,
+        updateMenuData,
+        updateMenuImg,
         destroyMenu
     };
 }
