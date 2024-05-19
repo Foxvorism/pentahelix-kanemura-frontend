@@ -4,6 +4,7 @@ import { ArrowRight } from "@element-plus/icons-vue";
 import Swal from "sweetalert2";
 import useMenu from "@/composables/menu.js";
 import ModalMenuInput from "@/components/admin_dashboard/ModalMenuInput.vue";
+import ModalMenuUpdate from "@/components/admin_dashboard/ModalMenuUpdate.vue";
 import ModalMenuDetail from "@/components/admin_dashboard/ModalMenuDetail.vue";
 
 const category = ref(null);
@@ -93,13 +94,11 @@ const deleteMenu = (id, nama_menu) => {
           <el-table-column align="right">
             <template #header>
               <el-input v-model="search" :placeholder="searchPlaceholder" />
-              <ModalMenuInput :id_category="menu.type" :category="category" />
+              <ModalMenuInput />
             </template>
             <template #default="scope">
               <ModalMenuDetail :id="scope.row.id" />
-              <el-button id="btn-edit">
-                <i class="ph ph-pen"></i>
-              </el-button>
+              <ModalMenuUpdate :data="scope.row" />
               <el-button
                 id="btn-delete"
                 @click="deleteMenu(scope.row.id, scope.row.namaMenu)"
