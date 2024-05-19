@@ -1,6 +1,5 @@
 <script setup>
 import { ref, toRefs, reactive } from "vue";
-import Swal from "sweetalert2";
 import useUser from "@/composables/user.js";
 
 const { updateUser } = useUser();
@@ -19,22 +18,6 @@ const handleUpdate = () => {
   updateUser(formUser);
   name.value = "";
   password.value = "";
-
-  const Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-    timerProgressBar: true,
-  });
-
-  Toast.fire({
-    icon: "success",
-    title: "Akun anda berhasil di update!",
-  });
-  setTimeout(function () {
-    location.reload();
-  }, 2000);
 };
 </script>
 
