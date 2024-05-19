@@ -1,4 +1,5 @@
 import { ref } from "vue";
+import Swal from "sweetalert2";
 import useAxios from "./axios";
 
 const useUser = () => {
@@ -16,8 +17,24 @@ const useUser = () => {
     
     const storeUser = async (payload) => {    
         try {
-            await axios.post(`/auth/users`, payload);
-            await getUsers();
+            const res = await axios.post(`/auth/users`, payload);
+            if (res.status == 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+                
+                Toast.fire({
+                    icon: "success",
+                    title: "User baru berhasil dibuat!",
+                });
+                    setTimeout(function () {
+                    location.reload();
+                }, 2000);
+            }
         } catch (error) {
             console.log(error);
         } 
@@ -25,8 +42,24 @@ const useUser = () => {
 
     const updateUser = async (payload) => {    
         try {
-            await axios.put(`/users/current`, payload);
-            await getUsers();
+            const res = await axios.put(`/users/current`, payload);
+            if (res.status == 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+                
+                Toast.fire({
+                    icon: "success",
+                    title: "Akun anda berhasil di update!",
+                });
+                    setTimeout(function () {
+                    location.reload();
+                }, 2000);
+            }
         } catch (error) {
             console.log(error);
         } 
@@ -34,8 +67,25 @@ const useUser = () => {
 
     const destroyUser = async (uname) => {    
         try {
-            await axios.delete(`/auth/users/${uname}`);
-            await getUsers();
+            const res = await axios.delete(`/auth/users/${uname}`);
+            if (res.status == 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+    
+                Toast.fire({
+                    icon: "success",
+                    title: "Akun anda berhasil dihapus!",
+                });
+                router.push({ name: 'auth'})
+                setTimeout(function(){
+                    location.reload();
+                }, 2000);
+            }
         } catch (error) {
             console.log(error);
         } 
