@@ -98,3 +98,17 @@
 .modal .el-select__wrapper .el-select__caret {
     color: var(--color-blue);
 }
+
+.el-carousel__item--card {
+    border-radius: 10px;
+}
+
+.el-carousel__item:nth-child(2n) {
+    background-color: var(--color-blue);
+    color: var(--color-cream);
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+    background-color: var(--color-red);
+    color: var(--color-cream);
+}
