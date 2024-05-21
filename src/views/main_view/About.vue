@@ -1,8 +1,8 @@
 <script setup>
 import Navbar from "@/components/main_view/Navbar.vue";
 import Hero from "@/components/main_view/about/Hero.vue";
-import Visi from "@/components/main_view/about/Visi.vue";
-import Misi from "@/components/main_view/about/Misi.vue";
+import VisiMisi from "@/components/main_view/about/VisiMisi.vue";
+
 import WhyKanemura from "@/components/main_view/about/WhyKanemura.vue";
 import Footer from "@/components/main_view/Footer.vue";
 </script>
@@ -13,11 +13,8 @@ import Footer from "@/components/main_view/Footer.vue";
     <div id="hero">
       <Hero />
     </div>
-    <div id="visi">
-      <Visi />
-    </div>
-    <div id="misi">
-      <Misi />
+    <div id="visi-misi">
+      <VisiMisi />
     </div>
     <div id="why-kanemura">
       <WhyKanemura />
