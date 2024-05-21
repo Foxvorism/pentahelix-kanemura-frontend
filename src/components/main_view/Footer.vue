@@ -53,4 +53,11 @@
       </div>
     </div>
   </div>
+  <div
+    class="w-full bg-[var(--color-blue)] text-[var(--color-cream)] py-3 text-center tracking-wider text-sm"
+  >
+    &copy; 2024
+    <span class="font-semibold">Kanemura Japanese Food Website</span>
+    by Pentahelix <span class="mx-1">|</span> All Right Reserved.
+  </div>
 </template>
