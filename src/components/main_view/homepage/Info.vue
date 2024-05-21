@@ -24,7 +24,8 @@
               Address
             </div>
             <div id="text" class="text-md text-[var(--color-cream)]">
-              Jl. Kumbang No.33, Bogor Tengah, Kota Bogor, Jawa Barat 16128
+              Jl. Kumbang No. 33, RT.02/RW.04, Babakan, Kecamatan Bogor Tengah,
+              Kota Bogor, Jawa Barat 16128.
             </div>
           </div>
         </div>
@@ -51,7 +52,7 @@
               Contact
             </div>
             <div id="text" class="text-md text-[var(--color-cream)]">
-              +62 0812345678
+              +62-85934733148
             </div>
           </div>
         </div>
@@ -78,7 +79,7 @@
               Email
             </div>
             <div id="text" class="text-md text-[var(--color-cream)]">
-              lorepipsum@gmail.com
+              kanemuraaa88@gmail.com
             </div>
           </div>
         </div>
@@ -105,8 +106,7 @@
               Opening Hour
             </div>
             <div id="text" class="text-md text-[var(--color-cream)]">
-              2 PM - 10 PM (Weekday) <b class="mx-2"> | </b> 2 PM - 11 PM
-              (Weekend)
+              10 AM - 11 PM <span class="mx-1"> | </span> Everyday
             </div>
             <div id="text" class="text-md text-[var(--color-cream)]"></div>
           </div>

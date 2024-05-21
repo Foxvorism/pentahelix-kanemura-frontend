@@ -9,7 +9,7 @@
       <div id="title" class="text-2xl font-semibold mb-10 text-center">
         1. Choose Your Service
       </div>
-      <div class="grid grid-cols-3 gap-14">
+      <div class="grid grid-cols-3 gap-14 w-[40vw]">
         <div
           id="card"
           class="col-span-2 bg-[var(--color-red)] p-5 rounded-2xl flex justify-around items-center"
@@ -120,7 +120,7 @@
       </div>
       <div
         id="card"
-        class="bg-[var(--color-red)] p-16 rounded-2xl flex flex-col justify-center items-center gap-7"
+        class="bg-[var(--color-red)] p-16 rounded-2xl flex flex-col justify-center items-center gap-7 w-[40vw]"
       >
         <div
           id="title"
@@ -130,9 +130,10 @@
         </div>
         <div
           id="subtitle"
-          class="text-md text-[var(--color-cream)] tracking-widest"
+          class="text-md text-[var(--color-cream)] tracking-widest text-center"
         >
-          Jl. Kumbang No. 33, Bogor Tengah, Kota Bogor, Jawa Barat 16128.
+          Jl. Kumbang No. 33, RT.02/RW.04, Babakan, Kecamatan Bogor Tengah, Kota
+          Bogor, Jawa Barat 16128.
         </div>
 
         <div id="button">

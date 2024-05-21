@@ -20,10 +20,6 @@
       </div>
     </div>
   </div>
-
-  <div id="img-caontainer" class="h-[65vh]">
-    <div id="img" class="h-full w-full"></div>
-  </div>
 </template>
 
 <style scoped>

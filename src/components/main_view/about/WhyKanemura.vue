@@ -9,8 +9,8 @@
     <div class="flex item-center justify-center">
       <div>
         <div class="grid grid-cols-3 gap-32">
-          <div id="card">Quality Food</div>
-          <div id="card">At Best Price</div>
+          <div id="card">Best Quality Food</div>
+          <div id="card">At The Best Price</div>
           <div id="card">Great Service</div>
         </div>
       </div>
