@@ -36,7 +36,7 @@
           id="link"
           class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wide"
         >
-          <router-link :to="{ name: 'order' }">Order</router-link>
+          <router-link :to="{ name: 'order' }">How To Order</router-link>
         </div>
         <div
           id="link"
@@ -52,5 +52,18 @@
 <style scoped>
 #navbar {
   filter: drop-shadow(0px 0.4px 4px var(--color-blue));
+}
+
+#navbar a {
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+#navbar a:hover,
+#navbar a.active {
+  background-color: var(--color-red);
+  box-shadow: 3px 3px var(--color-blue);
+  color: var(--color-cream);
 }
 </style>
