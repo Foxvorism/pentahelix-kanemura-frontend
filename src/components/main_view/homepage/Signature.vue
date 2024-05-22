@@ -43,11 +43,11 @@ onMounted(() => {
     </div>
 
     <div id="card-container" class="mb-10">
-      <div class="grid grid-cols-5 gap-10 px-32">
+      <div class="grid grid-cols-3 gap-10 px-32">
         <div v-for="item in menus" :key="item.id">
           <div
             id="menu-card"
-            class="px-5 py-3 bg-[var(--color-red)] rounded-md min-h-full"
+            class="px-5 py-3 rounded-md min-h-full bg-[var(--color-red)]"
           >
             <div id="image">
               <div
@@ -63,7 +63,7 @@ onMounted(() => {
             </div>
             <div
               id="menu-name"
-              class="bg-[var(--color-blue)] rounded-full text-center text-[var(--color-cream)] text-md py-1 mb-2"
+              class="bg-[var(--color-blue)] rounded-full text-center text-[var(--color-cream)] text-md py-1 px-2 mb-2"
             >
               {{ item.namaMenu }}
             </div>
@@ -75,7 +75,7 @@ onMounted(() => {
             </div>
             <div
               id="menu-price"
-              class="text-center text-[var(--color-cream)] text-lg"
+              class="text-center text-[var(--color-cream)] text-lg font-medium"
             >
               IDR {{ item.harga }}
             </div>
@@ -101,6 +101,7 @@ onMounted(() => {
 
 <style scoped>
 #menu-card {
+  border: 2px solid var(--color-blue);
   box-shadow: 10px 10px var(--color-blue);
 }
 </style>
