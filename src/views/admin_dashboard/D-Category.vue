@@ -2,7 +2,6 @@
 import { ref, computed, onMounted } from "vue";
 import { ArrowRight } from "@element-plus/icons-vue";
 
-import Swal from "sweetalert2";
 import useCategory from "@/composables/category.js";
 import Sidebar from "@/components/admin_dashboard/Sidebar.vue";
 
