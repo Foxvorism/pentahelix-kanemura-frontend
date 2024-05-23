@@ -2,6 +2,8 @@
 import Navbar from "@/components/main_view/Navbar.vue";
 import Hero from "@/components/main_view/contact/Hero.vue";
 import ContactList from "@/components/main_view/contact/ContactList.vue";
+import Instagram from "@/components/main_view/contact/Instagram.vue";
+import Tiktok from "@/components/main_view/contact/Tiktok.vue";
 import Footer from "@/components/main_view/Footer.vue";
 </script>
 
@@ -11,11 +13,15 @@ import Footer from "@/components/main_view/Footer.vue";
     <div id="hero">
       <Hero />
     </div>
-    <div id="contactList">
+    <div id="contact-list" class="mb-20">
       <ContactList />
+    </div>
+    <div id="Instagram" class="mb-20">
+      <Instagram />
+    </div>
+    <div id="Tiktok">
+      <Tiktok />
     </div>
   </div>
   <Footer />
 </template>
-
-
