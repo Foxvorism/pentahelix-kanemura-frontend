@@ -11,7 +11,7 @@ import ModalUserUpdate from "@/components/admin_dashboard/ModalUserUpdate.vue";
 
 const search = ref("");
 const { users, getUsers, destroyUser } = useUser();
-const { detail_user, getUserInfo, validationDashboard, logout } = useAuth();
+const { detail_user, getUserInfo, logout } = useAuth();
 
 const filteredUsers = computed(() =>
   users.value.filter(
@@ -24,7 +24,6 @@ const filteredUsers = computed(() =>
 onMounted(() => {
   getUsers();
   getUserInfo();
-  validationDashboard();
 });
 
 const deleteUser = (uname) => {
