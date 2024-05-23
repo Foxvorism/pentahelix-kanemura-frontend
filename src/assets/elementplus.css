@@ -103,12 +103,9 @@
     border-radius: 10px;
 }
 
-.el-carousel__item:nth-child(2n) {
-    background-color: var(--color-blue);
-    color: var(--color-cream);
-}
-
+.el-carousel__item:nth-child(2n),
 .el-carousel__item:nth-child(2n + 1) {
-    background-color: var(--color-red);
+    border: 2px solid var(--color-red);
+    background-color: var(--color-blue);
     color: var(--color-cream);
 }
