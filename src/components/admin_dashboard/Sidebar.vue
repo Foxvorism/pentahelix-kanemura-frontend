@@ -4,12 +4,13 @@ import Swal from "sweetalert2";
 import useAuth from "@/composables/auth.js";
 import useCategory from "@/composables/category.js";
 
-const { detail_user, getUserInfo, logout } = useAuth();
+const { detail_user, getUserInfo, validationDashboard, logout } = useAuth();
 const { categories, getCategories } = useCategory();
 
 onMounted(() => {
   getUserInfo();
   getCategories();
+  validationDashboard();
 });
 
 const openSubmenu = () => {
