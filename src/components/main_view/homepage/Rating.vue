@@ -11,16 +11,18 @@
 
     <div id="rating-widget">
       <div
-        class="elfsight-app-4e7609c8-4b59-437e-a448-3397ea87b880"
+        class="elfsight-app-b7344501-b119-4a28-a41b-e754e2729c94"
         data-elfsight-app-lazy
-      />
+      ></div>
     </div>
   </div>
 </template>
 
 <style scoped>
 #rating-widget {
-  border-radius: 28px;
+  background-color: var(--color-red);
+  padding: 20px;
+  border-radius: 20px;
   box-shadow: 10px 10px var(--color-blue);
 }
 </style>
