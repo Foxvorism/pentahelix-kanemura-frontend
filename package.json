@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vueuse/integrations": "^10.9.0",
+    "@vueuse/motion": "^2.1.0",
     "axios": "^1.6.8",
     "dayjs": "^1.11.10",
     "element-plus": "^2.7.1",
