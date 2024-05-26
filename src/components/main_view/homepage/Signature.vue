@@ -43,45 +43,47 @@ onMounted(() => {
     </div>
 
     <div id="card-container" class="mb-10">
-      <div class="grid grid-cols-3 gap-10 px-32">
-        <div v-for="item in menus" :key="item.id">
-          <div
-            id="menu-card"
-            class="px-5 py-3 rounded-md min-h-full bg-[var(--color-red)]"
-          >
-            <div id="image">
-              <div
-                id="img-container"
-                class="h-[20vh] p-3 flex justify-center items-center"
-              >
-                <img
-                  :src="img_api + item.nama_img"
-                  :alt="item.nama_img ?? 'Image not found'"
-                  class="h-full object-contain"
-                />
+      <el-scrollbar>
+        <div class="flex overflow-x-auto gap-5 px-5">
+          <div v-for="item in menus" :key="item.id" class="mb-5">
+            <div
+              id="menu-card"
+              class="px-5 py-3 rounded-md w-[350px] min-h-full bg-[var(--color-red)]"
+            >
+              <div id="image">
+                <div
+                  id="img-container"
+                  class="h-[20vh] p-3 flex justify-center items-center"
+                >
+                  <img
+                    :src="img_api + item.nama_img"
+                    :alt="item.nama_img ?? 'Image not found'"
+                    class="h-full object-contain"
+                  />
+                </div>
               </div>
-            </div>
-            <div
-              id="menu-name"
-              class="bg-[var(--color-blue)] rounded-full text-center text-[var(--color-cream)] text-md py-1 px-2 mb-2"
-            >
-              {{ item.namaMenu }}
-            </div>
-            <div
-              id="menu-desc"
-              class="text-center text-[var(--color-cream)] text-md mb-2"
-            >
-              {{ item.description }}
-            </div>
-            <div
-              id="menu-price"
-              class="text-center text-[var(--color-cream)] text-lg font-medium"
-            >
-              IDR {{ item.harga }}
+              <div
+                id="menu-name"
+                class="bg-[var(--color-blue)] rounded-full text-center text-[var(--color-cream)] text-md py-1 px-2 mb-2"
+              >
+                {{ item.namaMenu }}
+              </div>
+              <div
+                id="menu-desc"
+                class="text-center text-[var(--color-cream)] text-md mb-2"
+              >
+                {{ item.description }}
+              </div>
+              <div
+                id="menu-price"
+                class="text-center text-[var(--color-cream)] text-lg font-medium"
+              >
+                IDR {{ item.harga }}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </el-scrollbar>
     </div>
   </div>
 
