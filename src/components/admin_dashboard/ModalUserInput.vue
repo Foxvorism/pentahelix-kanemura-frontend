@@ -52,16 +52,17 @@ const handleStore = () => {
             @keyup.enter="handleStore"
           >
             <el-form-item label="Nama">
-              <el-input type="text" v-model="formUser.name" />
+              <el-input type="text" v-model="formUser.name" required />
             </el-form-item>
             <el-form-item label="Username">
-              <el-input type="text" v-model="formUser.username" />
+              <el-input type="text" v-model="formUser.username" required />
             </el-form-item>
             <el-form-item label="Password">
               <el-input
                 type="password"
                 show-password
                 v-model="formUser.password"
+                required
               />
             </el-form-item>
             <div class="flex justify-center">
