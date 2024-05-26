@@ -37,6 +37,20 @@ const useUser = () => {
             }
         } catch (error) {
             console.log(error);
+            if (error.response.data.errors == "Username already registered") {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                });
+                
+                Toast.fire({
+                    icon: "error",
+                    title: "Username yang anda masukan sudah terdaftar!",
+                });
+            }
         } 
     }; 
 
