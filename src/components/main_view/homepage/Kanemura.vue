@@ -24,11 +24,13 @@
             yang berarti enak dan murah lalu diplesetkan menjadi
             <span class="text-[var(--color-red)] font-semibold">Kanemura</span>.
           </div>
-          <button
-            class="px-14 py-4 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
-          >
-            About Us
-          </button>
+          <router-link :to="{ name: 'about' }">
+            <button
+              class="px-14 py-4 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
+            >
+              About Us
+            </button>
+          </router-link>
         </div>
       </div>
       <div id="vektor" class="flex justify-center items-center">
@@ -73,11 +75,13 @@
             khas
             <span class="text-[var(--color-red)] font-medium">Kanemura</span>.
           </div>
-          <button
-            class="px-14 py-4 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
-          >
-            Menu
-          </button>
+          <router-link :to="{ name: 'menu' }">
+            <button
+              class="px-14 py-4 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
+            >
+              Menu
+            </button>
+          </router-link>
         </div>
       </div>
     </div>

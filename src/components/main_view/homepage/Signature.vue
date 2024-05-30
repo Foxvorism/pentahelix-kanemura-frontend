@@ -93,16 +93,20 @@ onMounted(() => {
   </div>
 
   <div id="button-container" class="flex justify-center gap-10">
-    <button
-      class="px-14 py-3 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
-    >
-      Menu
-    </button>
-    <button
-      class="px-14 py-3 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
-    >
-      Order
-    </button>
+    <router-link :to="{ name: 'menu' }">
+      <button
+        class="px-14 py-3 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
+      >
+        Menu
+      </button>
+    </router-link>
+    <router-link :to="{ name: 'order' }">
+      <button
+        class="px-14 py-3 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
+      >
+        Order
+      </button>
+    </router-link>
   </div>
 </template>
 
