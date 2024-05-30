@@ -1,4 +1,16 @@
-<script setup></script>
+<script setup>
+const maps = "https://maps.app.goo.gl/nqYrv1cwJcxNBRqj9";
+const grab =
+  "https://r.grab.com/g/6-20240530_085128_c327ed2d6ad6d821_MEXMPS-6-C4CTVY4TTVEVDE";
+
+const openMaps = () => {
+  window.open(maps);
+};
+
+const openGrab = () => {
+  window.open(grab);
+};
+</script>
 
 <template>
   <div
@@ -138,7 +150,9 @@
 
         <div id="button">
           <button
+            id="btn-maps"
             class="bg-[var(--color-cream)] py-3 px-5 rounded-lg text-[var(--color-blue)] font-medium"
+            @click="openMaps()"
           >
             Open Google Maps to Kanemura Japanese Food
           </button>
@@ -163,6 +177,7 @@
           <div
             id="img-container"
             class="w-40 bg-[var(--color-cream)] p-2 rounded-md"
+            @click="openGrab()"
           >
             <img
               src="@/assets/img/logo-grab.jpg"
@@ -189,5 +204,16 @@
 <style scoped>
 #card {
   box-shadow: 10px 10px var(--color-blue);
+}
+
+#btn-maps,
+#img-container {
+  transition: all 0.3s ease;
+}
+
+#btn-maps:hover,
+#img-container:hover {
+  cursor: pointer;
+  scale: 1.05;
 }
 </style>
