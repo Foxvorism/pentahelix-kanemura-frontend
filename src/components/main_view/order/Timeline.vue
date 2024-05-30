@@ -2,6 +2,8 @@
 const maps = "https://maps.app.goo.gl/nqYrv1cwJcxNBRqj9";
 const grab =
   "https://r.grab.com/g/6-20240530_085128_c327ed2d6ad6d821_MEXMPS-6-C4CTVY4TTVEVDE";
+// const shopee =
+//   "https://shopee.co.id/universal-link/now-food/shop/21248329?deep_and_deferred=1&shareChannel=copy_link";
 
 const openMaps = () => {
   window.open(maps);
@@ -10,6 +12,10 @@ const openMaps = () => {
 const openGrab = () => {
   window.open(grab);
 };
+
+// const openShopee = () => {
+//   window.open(shopee);
+// };
 </script>
 
 <template>
@@ -161,7 +167,7 @@ const openGrab = () => {
     </div>
     <div id="content-3">
       <div id="title" class="text-2xl font-semibold mb-10 text-center">
-        3. For Order (3rd Party App)
+        3. For Order
       </div>
       <div
         id="card"
@@ -173,7 +179,7 @@ const openGrab = () => {
         >
           Go To Our Marketplace:
         </div>
-        <div class="flex gap-10">
+        <div class="flex">
           <div
             id="img-container"
             class="w-40 bg-[var(--color-cream)] p-2 rounded-md"
@@ -185,16 +191,17 @@ const openGrab = () => {
               class="h-full object-cover rounded-md"
             />
           </div>
-          <div
+          <!-- <div
             id="img-container"
             class="w-40 bg-[var(--color-cream)] p-2 rounded-md"
+            @click="openShopee()"
           >
             <img
               src="@/assets/img/logo-shopee.png"
               alt=""
               class="h-full object-cover rounded-md"
             />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
