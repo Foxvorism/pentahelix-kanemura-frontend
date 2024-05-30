@@ -1,8 +1,13 @@
 <script setup>
+import { onMounted } from "vue";
 import Navbar from "@/components/main_view/Navbar.vue";
 import HeroByCategory from "@/components/main_view/menu/HeroByCategory.vue";
 import Menus from "@/components/main_view/menu/Menus.vue";
 import Footer from "@/components/main_view/Footer.vue";
+
+onMounted(() => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>

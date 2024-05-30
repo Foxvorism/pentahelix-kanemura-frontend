@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from "vue";
 import Navbar from "@/components/main_view/Navbar.vue";
 import Hero from "@/components/main_view/homepage/Hero.vue";
 import Kanemura from "@/components/main_view/homepage/Kanemura.vue";
@@ -7,6 +8,10 @@ import Signature from "@/components/main_view/homepage/Signature.vue";
 import Location from "@/components/main_view/homepage/Location.vue";
 import Info from "@/components/main_view/homepage/Info.vue";
 import Footer from "@/components/main_view/Footer.vue";
+
+onMounted(() => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>

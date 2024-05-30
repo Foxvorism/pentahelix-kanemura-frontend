@@ -1,10 +1,15 @@
 <script setup>
+import { onMounted } from "vue";
 import Navbar from "@/components/main_view/Navbar.vue";
 import Hero from "@/components/main_view/contact/Hero.vue";
 import ContactList from "@/components/main_view/contact/ContactList.vue";
 import Instagram from "@/components/main_view/contact/Instagram.vue";
 import Tiktok from "@/components/main_view/contact/Tiktok.vue";
 import Footer from "@/components/main_view/Footer.vue";
+
+onMounted(() => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>

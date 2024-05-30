@@ -1,8 +1,13 @@
 <script setup>
+import { onMounted } from "vue";
 import Navbar from "@/components/main_view/Navbar.vue";
 import Hero from "@/components/main_view/order/Hero.vue";
 import Timeline from "@/components/main_view/order/Timeline.vue";
 import Footer from "@/components/main_view/Footer.vue";
+
+onMounted(() => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>
