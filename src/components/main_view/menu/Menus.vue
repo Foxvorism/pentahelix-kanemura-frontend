@@ -42,7 +42,12 @@ onMounted(() => {
             {{ item.description }}
           </div>
           <div id="menu-price" class="text-center text-lg font-medium">
-            IDR {{ item.harga }}
+            IDR
+            {{
+              item.harga.toLocaleString("de-DE", {
+                maximumFractionDigits: 3,
+              })
+            }}
           </div>
         </div>
       </div>
