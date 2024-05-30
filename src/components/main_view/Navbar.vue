@@ -1,4 +1,21 @@
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+
+onMounted(() => {
+  onScroll();
+});
+
+const onScroll = () => {
+  document.addEventListener("scroll", () => {
+    const top = document.querySelector(".back-to-top");
+    if (window.scrollY > 100) {
+      top.classList.add("active");
+    } else {
+      top.classList.remove("active");
+    }
+  });
+};
+</script>
 
 <template>
   <div
@@ -47,6 +64,15 @@
       </div>
     </div>
   </div>
+
+  <div id="back-to-top" class="back-to-top">
+    <a
+      href="#"
+      class="text-[var(--color-cream)] font-bold text-xl flex justify-center items-center"
+    >
+      <i class="ph-bold ph-caret-up"></i>
+    </a>
+  </div>
 </template>
 
 <style scoped>
@@ -65,5 +91,31 @@
   background-color: var(--color-red);
   box-shadow: 3px 3px var(--color-blue);
   color: var(--color-cream);
+}
+
+.back-to-top {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 100;
+  background: var(--color-blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top:hover {
+  scale: 1.1;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
 }
 </style>
