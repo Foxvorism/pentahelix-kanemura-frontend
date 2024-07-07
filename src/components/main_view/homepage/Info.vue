@@ -1,8 +1,8 @@
 <script setup></script>
 
 <template>
-  <div id="info" class="mx-20 mt-10">
-    <div class="grid grid-cols-2 gap-10 px-20">
+  <div id="container" class="mx-20 mt-10">
+    <div class="product-grid gap-10 px-20">
       <div
         id="card-info"
         class="w-full px-10 py-5 bg-[var(--color-red)] rounded-md"
@@ -119,5 +119,30 @@
 <style scoped>
 #card-info {
   box-shadow: 10px 10px var(--color-blue);
+}
+
+.product-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  padding: 0;
+}
+
+@media (max-width: 991px) {
+  #container {
+    margin: 40px;
+  }
+
+  #title {
+    font-size: 18px;
+  }
+
+  #card-info {
+    padding: 15px;
+  }
+
+  #card-info #icon {
+    display: none;
+  }
 }
 </style>

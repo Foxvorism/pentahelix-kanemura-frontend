@@ -12,7 +12,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="mx-20 mt-20">
+  <div id="container" class="mx-20 mt-20">
     <img
       src="@/assets/img/sushi-1.png"
       alt="sushi-1"
@@ -22,17 +22,6 @@ onMounted(() => {
       src="@/assets/img/sushi-2.png"
       alt="sushi-2"
       class="absolute -right-10 w-[10vw] mt-14"
-    />
-    <img
-      src="@/assets/img/sushi-1.png"
-      alt="sushi-1"
-      class="absolute -right-24 w-[15vw] mt-[30rem]"
-    />
-
-    <img
-      src="@/assets/img/sushi-2.png"
-      alt="sushi-2"
-      class="absolute -left-10 w-[10vw] mt-[47rem]"
     />
 
     <div
@@ -44,7 +33,7 @@ onMounted(() => {
 
     <div id="card-container" class="mb-10">
       <el-scrollbar>
-        <div class="flex overflow-x-auto gap-5 px-5">
+        <div class="flex overflow-x-auto gap-5">
           <div v-for="item in menus" :key="item.id" class="mb-5">
             <div
               id="menu-card"
@@ -64,13 +53,13 @@ onMounted(() => {
               </div>
               <div
                 id="menu-name"
-                class="bg-[var(--color-blue)] rounded-full text-center text-[var(--color-cream)] text-md py-1 px-2 mb-2"
+                class="bg-[var(--color-blue)] rounded-full text-center text-[var(--color-cream)] text-base py-1 px-2 mb-2"
               >
                 {{ item.namaMenu }}
               </div>
               <div
                 id="menu-desc"
-                class="text-center text-[var(--color-cream)] text-md mb-2"
+                class="text-center text-[var(--color-cream)] text-base mb-2"
               >
                 {{ item.description }}
               </div>
@@ -90,23 +79,27 @@ onMounted(() => {
         </div>
       </el-scrollbar>
     </div>
-  </div>
 
-  <div id="button-container" class="flex justify-center gap-10">
-    <router-link :to="{ name: 'menu' }">
-      <button
-        class="px-14 py-3 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
-      >
-        Menu
-      </button>
-    </router-link>
-    <router-link :to="{ name: 'order' }">
-      <button
-        class="px-14 py-3 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
-      >
-        Order
-      </button>
-    </router-link>
+    <div id="button-container" class="flex justify-center gap-10">
+      <div id="btn-menu">
+        <router-link :to="{ name: 'menu' }">
+          <button
+            class="px-14 py-3 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
+          >
+            Menu
+          </button>
+        </router-link>
+      </div>
+      <div id="btn-order">
+        <router-link :to="{ name: 'order' }">
+          <button
+            class="px-14 py-3 bg-[var(--color-red)] text-[var(--color-cream)] rounded-full font-semibold tracking-wider"
+          >
+            Order
+          </button>
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -114,5 +107,53 @@ onMounted(() => {
 #menu-card {
   border: 2px solid var(--color-blue);
   box-shadow: 10px 10px var(--color-blue);
+}
+
+@media (max-width: 991px) {
+  #container {
+    margin: 40px;
+  }
+
+  #title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  #card-container {
+    margin-bottom: 20px;
+  }
+
+  #menu-card {
+    width: 220px;
+  }
+
+  #img-container {
+    height: 15vh;
+  }
+
+  #menu-name,
+  #menu-desc {
+    font-size: 14px;
+  }
+
+  #menu-price {
+    font-size: 16px;
+  }
+
+  #button-container {
+    gap: 20px;
+  }
+
+  #btn-menu,
+  #btn-order {
+    display: flex;
+    justify-content: center;
+  }
+
+  #btn-menu button,
+  #btn-order button {
+    padding: 8px 40px;
+    font-size: 14px;
+  }
 }
 </style>
