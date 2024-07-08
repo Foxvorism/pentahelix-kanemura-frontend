@@ -109,3 +109,21 @@
     background-color: var(--color-blue);
     color: var(--color-cream);
 }
+
+@media (max-width: 991px) {
+    .el-carousel__item--card {
+        width: 80% !important;
+    }
+
+    .el-carousel__item--card.is-active {
+        transform: translateX(33px) scale(1) !important;
+    }
+
+    .el-carousel__item--card:not(.is-active):nth-child(odd) {
+        transform: translateX(-15px) scale(0.83) !important;
+    }
+
+    .el-carousel__item--card:not(.is-active):nth-child(even) {
+        transform: translateX(75px) scale(0.83) !important;
+    }
+}
