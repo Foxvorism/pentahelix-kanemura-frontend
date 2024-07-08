@@ -16,8 +16,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="px-40 py-20">
-    <div class="grid grid-cols-3 gap-10">
+  <div id="container" class="px-40 py-20">
+    <div class="product-grid">
       <div v-for="item in menus" :key="item.id">
         <div id="menu-card" class="px-5 py-3 rounded-md min-h-full">
           <div id="image">
@@ -65,5 +65,38 @@ onMounted(() => {
   background-color: var(--color-red);
   box-shadow: 10px 10px var(--color-blue);
   color: var(--color-cream);
+}
+
+.product-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 911px) {
+  #container {
+    padding: 40px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  #card-container {
+    margin-bottom: 20px;
+  }
+
+  #img-container {
+    height: 15vh;
+  }
+
+  #menu-name,
+  #menu-desc {
+    font-size: 14px;
+  }
+
+  #menu-price {
+    font-size: 16px;
+  }
 }
 </style>

@@ -1,11 +1,14 @@
 <script setup></script>
 
 <template>
-  <div class="flex flex-col justify-center items-center px-40 py-20 w-full">
-    <div class="text-2xl font-bold mb-10 text-[var(--color-blue)]">
+  <div
+    id="container"
+    class="flex flex-col justify-center items-center px-40 py-20 w-full"
+  >
+    <div id="title" class="text-2xl font-bold mb-10 text-[var(--color-blue)]">
       Discover Our Authentic Menu
     </div>
-    <div class="grid grid-cols-3 gap-10">
+    <div class="product-grid">
       <router-link
         :to="{
           name: 'menu-by-category',
@@ -139,5 +142,38 @@
   background-color: var(--color-red);
   box-shadow: 10px 10px var(--color-blue);
   color: var(--color-cream);
+}
+
+.product-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 911px) {
+  #container {
+    padding: 40px;
+  }
+
+  #title {
+    font-size: 16px;
+  }
+
+  .product-grid {
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  #card {
+    border: 2px solid var(--color-blue);
+  }
+
+  #card #img {
+    padding: 20px;
+  }
+
+  #card #text {
+    font-size: 14px;
+  }
 }
 </style>
