@@ -31,8 +31,8 @@ const buttonAction = (linkto) => {
 
 <template>
   <div class="flex justify-center items-center">
-    <div class="w-[65vw]">
-      <el-carousel type="card" height="240px" :autoplay="false">
+    <div id="container" class="w-[65vw]">
+      <el-carousel type="card" :autoplay="false">
         <el-carousel-item v-for="item in contacts" :key="item">
           <div class="flex flex-col items-center justify-center h-full">
             <div
@@ -66,3 +66,16 @@ const buttonAction = (linkto) => {
     </div>
   </div>
 </template>
+
+<style scoped>
+@media (max-width: 991px) {
+  #container {
+    width: 100%;
+    margin: 40px;
+  }
+
+  #type {
+    display: none;
+  }
+}
+</style>

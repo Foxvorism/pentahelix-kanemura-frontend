@@ -1,15 +1,20 @@
 <script setup></script>
 
 <template>
-  <div class="h-[60vh] flex justify-center items-center text-center">
+  <div
+    id="container"
+    class="h-[60vh] flex justify-center items-center text-center"
+  >
     <img
       src="@/assets/img/hero-2.png"
       alt="hero 2"
+      id="hero2"
       class="absolute w-[34vw] left-0 top-[25vh] z-[1]"
     />
     <img
       src="@/assets/img/hero-3.png"
-      alt="hero 2"
+      alt="hero 3"
+      id="hero3"
       class="absolute w-[34vw] right-0 top-0 z-[1]"
     />
 
@@ -31,5 +36,30 @@
   background-image: url(@/assets/img/bg-auth.png);
   background-size: cover;
   background-position: center;
+}
+
+@media (max-width: 911px) {
+  #container {
+    height: 25vh;
+    margin-bottom: 20px;
+  }
+
+  #hero2 {
+    top: 180px;
+  }
+
+  #hero3 {
+    top: 60px;
+    right: -30px;
+  }
+
+  #title {
+    font-size: 45px;
+    margin-bottom: 0;
+  }
+
+  #japanese {
+    font-size: 20px;
+  }
 }
 </style>
