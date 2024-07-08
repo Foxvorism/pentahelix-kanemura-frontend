@@ -1,10 +1,13 @@
 <script setup></script>
 
 <template>
-  <div class="w-screen bg-[var(--color-red)] px-36 py-10">
-    <div class="flex justify-around">
+  <div id="container1" class="w-screen bg-[var(--color-red)] px-36 py-10">
+    <div id="container2" class="flex justify-around">
       <div id="img" class="flex justify-center">
-        <div class="bg-[var(--color-cream)] w-[200px] rounded-full">
+        <div
+          id="img-container"
+          class="bg-[var(--color-cream)] w-[200px] h-[200px] rounded-full"
+        >
           <img
             src="@/assets/img/logo-kanemura.png"
             alt="logo kanemura"
@@ -58,6 +61,7 @@
     </div>
   </div>
   <div
+    id="credits"
     class="w-full bg-[var(--color-blue)] text-[var(--color-cream)] py-3 text-center tracking-wider text-sm"
   >
     &copy; 2024
@@ -66,3 +70,59 @@
     Reserved.
   </div>
 </template>
+
+<style scoped>
+@media (max-width: 991px) {
+  #container1 {
+    padding: 20px 40px;
+  }
+
+  #container1 #container2 {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #img-container {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  #title {
+    text-align: center;
+  }
+
+  #title,
+  #address-title {
+    font-size: 16px;
+  }
+
+  #address {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #address,
+  #social-media #text {
+    font-size: 14px;
+  }
+
+  #social-media #icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  #social-media #icon i {
+    font-size: 18px;
+  }
+
+  #nav {
+    display: none;
+  }
+
+  #credits {
+    padding: 7px 20px;
+    font-size: 12px;
+  }
+}
+</style>
