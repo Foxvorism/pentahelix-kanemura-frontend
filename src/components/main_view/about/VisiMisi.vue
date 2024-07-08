@@ -5,11 +5,13 @@
     <img
       src="@/assets/img/dots-1.png"
       alt="dots"
+      id="dots"
       class="absolute w-20 mt-28 -left-8"
     />
     <img
       src="@/assets/img/dots-2.png"
       alt="dots"
+      id="dots"
       class="absolute w-20 mt-[400px] right-10"
     />
 
@@ -20,6 +22,7 @@
             <img
               src="@/assets/img/point.png"
               alt="point"
+              id="point"
               class="w-5 h-5 mr-5"
             />
             <div class="text-xl font-semibold">Visi Kanemura</div>
@@ -36,6 +39,7 @@
             <img
               src="@/assets/img/point.png"
               alt="point"
+              id="point"
               class="w-5 h-5 mr-5"
             />
             <div class="text-xl font-semibold">Misi Kanemura</div>
@@ -64,5 +68,39 @@
 <style scoped>
 #title {
   font-family: var(--font-fredoka);
+}
+
+@media (max-width: 911px) {
+  #dots {
+    display: none;
+  }
+
+  #container {
+    flex-direction: column;
+    padding: 40px;
+    gap: 20px;
+  }
+
+  #container #text {
+    padding: 0;
+  }
+
+  #title {
+    margin-bottom: 5px;
+  }
+
+  #point {
+    width: 10px;
+    height: 10px;
+  }
+
+  #title .text-xl {
+    font-size: 16px;
+  }
+
+  #visi,
+  #misi {
+    font-size: 14px;
+  }
 }
 </style>
