@@ -1,7 +1,10 @@
 <script setup></script>
 
 <template>
-  <div id="container" class="h-[60vh] flex justify-center items-center text-center">
+  <div
+    id="container"
+    class="h-[60vh] flex justify-center items-center text-center"
+  >
     <img
       src="@/assets/img/hero-1.png"
       alt="hero 1"
@@ -44,7 +47,7 @@
     top: 45px;
     transform: scale(1.5);
   }
-  
+
   #hero2 {
     top: 180px;
   }
