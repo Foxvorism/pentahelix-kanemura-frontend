@@ -23,7 +23,7 @@
             >
               Address
             </div>
-            <div id="text" class="text-md text-[var(--color-cream)]">
+            <div id="text" class="text-base text-[var(--color-cream)]">
               Jl. Kumbang No. 33, RT.02/RW.04, Babakan, Kecamatan Bogor Tengah,
               Kota Bogor, Jawa Barat 16128.
             </div>
@@ -51,7 +51,7 @@
             >
               Contact
             </div>
-            <div id="text" class="text-md text-[var(--color-cream)]">
+            <div id="text" class="text-base text-[var(--color-cream)]">
               +62-85934733148
             </div>
           </div>
@@ -78,7 +78,7 @@
             >
               Email
             </div>
-            <div id="text" class="text-md text-[var(--color-cream)]">
+            <div id="text" class="text-base text-[var(--color-cream)]">
               kanemuraaa88@gmail.com
             </div>
           </div>
@@ -105,10 +105,10 @@
             >
               Opening Hour
             </div>
-            <div id="text" class="text-md text-[var(--color-cream)]">
+            <div id="text" class="text-base text-[var(--color-cream)]">
               10 AM - 11 PM <span class="mx-1"> | </span> Everyday
             </div>
-            <div id="text" class="text-md text-[var(--color-cream)]"></div>
+            <div id="text" class="text-base text-[var(--color-cream)]"></div>
           </div>
         </div>
       </div>
@@ -124,17 +124,21 @@
 .product-grid {
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   padding: 0;
 }
 
 @media (max-width: 991px) {
+  .product-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
   #container {
     margin: 40px;
   }
 
   #title {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   #card-info {
@@ -143,6 +147,10 @@
 
   #card-info #icon {
     display: none;
+  }
+
+  #card-info #text {
+    font-size: 14px;
   }
 }
 </style>

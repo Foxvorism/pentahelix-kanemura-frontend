@@ -16,11 +16,13 @@ onMounted(() => {
     <img
       src="@/assets/img/sushi-1.png"
       alt="sushi-1"
+      id="sushi1"
       class="absolute -left-24 w-[15vw] mt-72"
     />
     <img
       src="@/assets/img/sushi-2.png"
       alt="sushi-2"
+      id="sushi2"
       class="absolute -right-10 w-[10vw] mt-14"
     />
 
@@ -110,12 +112,17 @@ onMounted(() => {
 }
 
 @media (max-width: 991px) {
+  #sushi1,
+  #sushi2 {
+    display: none;
+  }
+
   #container {
     margin: 40px;
   }
 
   #title {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 20px;
   }
 
