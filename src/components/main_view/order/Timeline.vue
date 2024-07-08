@@ -27,7 +27,7 @@ const openGrab = () => {
       <div id="title" class="text-2xl font-semibold mb-10 text-center">
         1. Choose Your Service
       </div>
-      <div class="grid grid-cols-3 gap-14 w-[40vw]">
+      <div class="product-grid gap-14">
         <div
           id="card"
           class="col-span-2 bg-[var(--color-red)] p-5 rounded-2xl flex justify-around items-center"
@@ -107,7 +107,7 @@ const openGrab = () => {
         </div>
         <div
           id="card"
-          class="bg-[var(--color-red)] p-16 rounded-2xl flex flex-col justify-center items-center"
+          class="card-order bg-[var(--color-red)] p-16 rounded-2xl flex flex-col justify-center items-center"
         >
           <div id="icon" class="mb-10">
             <svg
@@ -141,7 +141,7 @@ const openGrab = () => {
         class="bg-[var(--color-red)] p-16 rounded-2xl flex flex-col justify-center items-center gap-7 w-[40vw]"
       >
         <div
-          id="title"
+          id="card-title"
           class="text-xl font-semibold text-[var(--color-cream)] tracking-widest"
         >
           Go To Our Restaurant At:
@@ -174,7 +174,7 @@ const openGrab = () => {
         class="bg-[var(--color-red)] p-16 rounded-2xl flex flex-col justify-center items-center gap-7"
       >
         <div
-          id="title"
+          id="card-title"
           class="text-xl font-semibold text-[var(--color-cream)] tracking-widest"
         >
           Go To Our Marketplace:
@@ -191,17 +191,6 @@ const openGrab = () => {
               class="h-full object-cover rounded-md"
             />
           </div>
-          <!-- <div
-            id="img-container"
-            class="w-40 bg-[var(--color-cream)] p-2 rounded-md"
-            @click="openShopee()"
-          >
-            <img
-              src="@/assets/img/logo-shopee.png"
-              alt=""
-              class="h-full object-cover rounded-md"
-            />
-          </div> -->
         </div>
       </div>
     </div>
@@ -222,5 +211,46 @@ const openGrab = () => {
 #img-container:hover {
   cursor: pointer;
   scale: 1.05;
+}
+
+.product-grid {
+  display: grid;
+  gap: 3.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 911px) {
+  #container {
+    margin: 40px;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  #content-1,
+  #content-2,
+  #content-3 {
+    width: 100%;
+  }
+
+  .product-grid {
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #title {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  #card {
+    padding: 30px;
+    width: 100%;
+    grid-column: span 2 / span 2;
+  }
+
+  #card-title {
+    font-size: 14px;
+    text-align: center;
+  }
 }
 </style>
