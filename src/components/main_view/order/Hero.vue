@@ -48,7 +48,7 @@
   }
 
   #hero3 {
-    top: 60px;
+    top: 50px;
   }
 
   #title {
