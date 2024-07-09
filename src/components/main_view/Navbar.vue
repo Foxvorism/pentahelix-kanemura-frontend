@@ -99,64 +99,75 @@ const toggle_mobile = () => {
 
 <template>
   <header id="header" class="fixed w-screen">
-    <div id="container" class="w-full h-24 bg-[var(--color-cream)] flex items-center justify-between fixed px-28">
+    <div
+      id="container"
+      class="w-full h-24 bg-[var(--color-cream)] flex items-center justify-between fixed px-28"
+    >
       <img
         id="logo"
-          src="@/assets/img/logo-kanemura.png"
-          alt="logo kanemura"
-          class="w-20 scale-[1.75] ml-8"
-        />
+        src="@/assets/img/logo-kanemura.png"
+        alt="logo kanemura"
+        class="w-20 scale-[1.75] ml-8"
+      />
 
       <nav id="navbar" class="navbar">
         <ul class="text-lg">
           <li>
             <button class="btn-router" @click="mobile_mode">
-              <router-link 
+              <router-link
                 class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wider"
-                :to="{ name: 'home' }">
+                :to="{ name: 'home' }"
+              >
                 Home
               </router-link>
             </button>
           </li>
           <li>
             <button class="btn-router" @click="mobile_mode">
-              <router-link 
+              <router-link
                 class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wider"
-                :to="{ name: 'about' }">
+                :to="{ name: 'about' }"
+              >
                 About Us
               </router-link>
             </button>
           </li>
           <li>
             <button class="btn-router" @click="mobile_mode">
-              <router-link 
+              <router-link
                 class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wider"
-                :to="{ name: 'menu' }">
+                :to="{ name: 'menu' }"
+              >
                 Menu
               </router-link>
             </button>
           </li>
           <li>
             <button class="btn-router" @click="mobile_mode">
-              <router-link 
+              <router-link
                 class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wider"
-                :to="{ name: 'order' }">
+                :to="{ name: 'order' }"
+              >
                 How To Order
               </router-link>
             </button>
           </li>
           <li>
             <button class="btn-router" @click="mobile_mode">
-              <router-link 
+              <router-link
                 class="text-center px-6 text-lg text-[var(--color-red)] font-semibold tracking-wider"
-                :to="{ name: 'contact' }">
+                :to="{ name: 'contact' }"
+              >
                 Contact Us
               </router-link>
             </button>
           </li>
         </ul>
 
-        <i class="ph-bold ph-list mobile-nav-toggle font-semibold text-2xl" @click="toggle_mobile" />
+        <i
+          class="ph-bold ph-list mobile-nav-toggle font-bold text-2xl"
+          @click="toggle_mobile"
+        />
       </nav>
     </div>
   </header>
