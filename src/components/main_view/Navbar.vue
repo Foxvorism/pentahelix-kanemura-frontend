@@ -165,7 +165,7 @@ const toggle_mobile = () => {
         </ul>
 
         <i
-          class="ph-bold ph-list mobile-nav-toggle font-bold text-2xl"
+          class="ph ph-list mobile-nav-toggle font-bold text-2xl"
           @click="toggle_mobile"
         />
       </nav>
