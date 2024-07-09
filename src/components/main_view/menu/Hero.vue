@@ -43,7 +43,6 @@
 
   #hero3 {
     top: 60px;
-    right: -30px;
   }
 
   #title {
