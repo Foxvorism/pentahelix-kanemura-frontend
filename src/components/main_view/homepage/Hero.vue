@@ -44,8 +44,7 @@
 
 @media (max-width: 991px) {
   #hero1 {
-    top: 45px;
-    transform: scale(1.5);
+    top: 55px;
   }
 
   #hero2 {
@@ -54,7 +53,6 @@
 
   #hero3 {
     top: 60px;
-    right: -30px;
   }
 
   #container {
